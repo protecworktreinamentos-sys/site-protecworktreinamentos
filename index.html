@@ -20,6 +20,7 @@
 <meta name="geo.placename" content="Ponta Grossa">
 <meta name="geo.position" content="-25.0945;-50.1633">
 <meta name="ICBM" content="-25.0945, -50.1633">
+<link rel="preload" as="image" href="hero-obra.jpg" fetchpriority="high">
 <link rel="canonical" href="https://www.protecworktreinamentos.com.br/">
 
 <!-- Open Graph -->
@@ -174,29 +175,18 @@ nav a:hover{color:#fff;background:rgba(255,255,255,.09)}
 .hero-bg{
   position:absolute;inset:0;z-index:0;
   background:
-    url('img01.jpg') center/cover no-repeat;
+    url('hero-obra.jpg') center/cover no-repeat;
 }
 /* Gradient overlay: darkens left 55%, fades to transparent right */
 .hero-bg::after{
   content:'';
   position:absolute;inset:0;
   background:
-    linear-gradient(to bottom,
-      rgba(5,5,5,.65) 0%,
-      rgba(5,5,5,.75) 60%,
-      rgba(5,5,5,.92) 100%
-    );
+    linear-gradient(90deg,rgba(4,14,10,.94) 0%,rgba(4,14,10,.78) 42%,rgba(4,14,10,.56) 100%),
+    linear-gradient(180deg,rgba(4,14,10,.24),rgba(4,14,10,.72));
 }
 /* Subtle grid texture on left */
-.hero-grid{
-  position:absolute;inset:0;z-index:1;
-  background-image:
-    linear-gradient(rgba(0,210,106,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,210,106,.025) 1px,transparent 1px);
-  background-size:72px 72px;
-  mask-image:linear-gradient(to right, black 0%, black 45%, transparent 70%);
-  -webkit-mask-image:linear-gradient(to right, black 0%, black 45%, transparent 70%);
-}
+.hero-grid{display:none}
 /* Green accent line left edge */
 .hero-accent{
   position:absolute;left:0;top:0;bottom:0;z-index:2;
@@ -207,46 +197,42 @@ nav a:hover{color:#fff;background:rgba(255,255,255,.09)}
 /* Inner layout */
 .hero-inner{
   position:relative;z-index:10;
-  width:100%;max-width:1400px;margin:0 auto;
-  padding:80px 5vw 80px;
-  display:grid;
-  grid-template-columns:1fr;
-  gap:64px;
-  align-items:center;
+  width:100%;max-width:1240px;margin:0 auto;
+  padding:118px 5vw 92px;
+  display:block;
 }
 
 /* ─── LEFT COLUMN ─── */
-.hero-left{display:flex;flex-direction:column;gap:0}
+.hero-left{display:flex;flex-direction:column;gap:0;max-width:690px}
 
 /* Pill badge */
 .hero-badge{
   display:inline-flex;align-items:center;gap:8px;
-  margin-bottom:28px;
-  padding:6px 16px;
-  background:rgba(0,210,106,.1);
-  border:1px solid rgba(0,210,106,.35);
-  border-radius:100px;
-  font-size:11.5px;font-weight:700;letter-spacing:.14em;
+  margin-bottom:24px;
+  padding:7px 12px;
+  background:rgba(0,210,106,.08);
+  border:1px solid rgba(0,210,106,.28);
+  border-radius:4px;
+  font-size:10.5px;font-weight:700;letter-spacing:.12em;
   text-transform:uppercase;color:var(--g);
   width:fit-content;
 }
 .hero-badge::before{
-  content:'';width:7px;height:7px;border-radius:50%;
+  content:'';width:6px;height:6px;border-radius:50%;
   background:var(--g);
-  animation:pulse 2s ease-in-out infinite;
 }
 
 /* Main title */
 .hero-title{
   font-family:'Barlow',sans-serif;
-  font-size:clamp(36px,4.8vw,68px);
+  font-size:clamp(38px,4.8vw,64px);
   font-weight:800;
   line-height:1.02;
-  letter-spacing:-.02em;
+  letter-spacing:-.035em;
   color:#fff;
   max-width:680px;
   margin-bottom:24px;
-  text-shadow:0 2px 24px rgba(0,0,0,.4);
+  text-shadow:0 2px 18px rgba(0,0,0,.3);
   opacity:0;transform:translateY(32px);
   animation:fup .8s .2s var(--tr) forwards;
 }
@@ -256,10 +242,10 @@ nav a:hover{color:#fff;background:rgba(255,255,255,.09)}
 .hero-sub{
   font-size:clamp(14px,1.3vw,17px);
   font-weight:400;
-  color:rgba(255,255,255,.76);
-  line-height:1.72;
-  max-width:560px;
-  margin-bottom:36px;
+  color:rgba(255,255,255,.72);
+  line-height:1.65;
+  max-width:540px;
+  margin-bottom:30px;
   opacity:0;transform:translateY(20px);
   animation:fup .8s .38s var(--tr) forwards;
 }
@@ -267,50 +253,50 @@ nav a:hover{color:#fff;background:rgba(255,255,255,.09)}
 /* CTA buttons */
 .hero-btns{
   display:flex;gap:14px;flex-wrap:wrap;
-  margin-bottom:40px;
+  margin-bottom:34px;
   opacity:0;transform:translateY(16px);
   animation:fup .8s .52s var(--tr) forwards;
 }
 .btn-primary{
   display:inline-flex;align-items:center;gap:9px;
-  padding:14px 28px;
+  padding:13px 22px;
   background:var(--g);color:#000;
   font-size:13.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
-  border:none;border-radius:9px;cursor:pointer;text-decoration:none;
-  box-shadow:0 0 40px rgba(0,210,106,.3);
+  border:none;border-radius:5px;cursor:pointer;text-decoration:none;
+  box-shadow:0 8px 24px rgba(0,210,106,.18);
   transition:.25s var(--tr);
 }
-.btn-primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 44px rgba(0,210,106,.5)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,210,106,.3)}
 .btn-outline{
   display:inline-flex;align-items:center;gap:9px;
-  padding:14px 28px;
-  background:rgba(255,255,255,.07);color:#fff;
+  padding:13px 22px;
+  background:rgba(255,255,255,.04);color:#fff;
   font-size:13.5px;font-weight:600;letter-spacing:.04em;
-  border:1.5px solid rgba(255,255,255,.3);border-radius:9px;cursor:pointer;text-decoration:none;
-  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.28);border-radius:5px;cursor:pointer;text-decoration:none;
   transition:.25s var(--tr);
 }
-.btn-outline:hover{border-color:rgba(255,255,255,.65);background:rgba(255,255,255,.12);transform:translateY(-3px)}
+.btn-outline:hover{border-color:rgba(255,255,255,.58);background:rgba(255,255,255,.08);transform:translateY(-2px)}
 
 /* Micro proofs */
 .hero-proofs{
-  display:flex;flex-direction:column;gap:10px;
+  display:flex;flex-wrap:wrap;gap:18px 28px;
+  padding-top:18px;border-top:1px solid rgba(255,255,255,.14);
   opacity:0;transform:translateY(12px);
   animation:fup .8s .66s var(--tr) forwards;
 }
 .proof-item{
   display:flex;align-items:center;gap:10px;
-  font-size:13px;font-weight:500;
-  color:rgba(255,255,255,.72);
+  font-size:12px;font-weight:500;
+  color:rgba(255,255,255,.64);
 }
 .proof-item::before{
-  content:'✓';
+  content:'+';
   display:flex;align-items:center;justify-content:center;
-  width:20px;height:20px;
-  background:rgba(0,210,106,.15);
-  border:1px solid rgba(0,210,106,.4);
-  border-radius:50%;
-  color:var(--g);font-size:11px;
+  width:16px;height:16px;
+  background:transparent;
+  border:1px solid rgba(0,210,106,.5);
+  border-radius:3px;
+  color:var(--g);font-size:12px;
   flex-shrink:0;
 }
 
@@ -370,8 +356,8 @@ nav a:hover{color:#fff;background:rgba(255,255,255,.09)}
 /* Subtle bg image behind stats */
 .stats-bg{
   position:absolute;inset:0;
-  background:url('img02.jpg') center/cover no-repeat;
-  opacity:.06;
+  background:none;
+  opacity:0;
 }
 .stats-inner{
   position:relative;z-index:1;
@@ -421,9 +407,9 @@ nav a:hover{color:#fff;background:rgba(255,255,255,.09)}
 .photo-marquee{position:relative;z-index:1;padding:48px 0 64px;overflow:hidden;
   -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);
           mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
-.pm-track{display:flex;gap:24px;width:max-content;will-change:transform;animation:pm-scroll 70s linear infinite}
-.photo-marquee:hover .pm-track{animation-play-state:paused}
-.pm-item{flex:0 0 auto;width:440px;height:300px;border-radius:18px;overflow:hidden;
+.pm-track{display:flex;gap:24px;width:max-content;will-change:transform;animation:pm-scroll 45s linear infinite}
+.pm-track.is-paused{animation-play-state:paused}
+.pm-item{flex:0 0 auto;width:440px;height:300px;border-radius:8%;overflow:hidden;
   border:1px solid rgba(255,255,255,.1);box-shadow:0 14px 38px rgba(0,0,0,.38)}
 .pm-item img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .6s ease}
 .pm-item:hover img{transform:scale(1.06)}
@@ -431,7 +417,7 @@ nav a:hover{color:#fff;background:rgba(255,255,255,.09)}
 @media(max-width:768px){
   .pm-head{padding-top:44px}
   .photo-marquee{padding:34px 0 44px}
-  .pm-item{width:300px;height:205px;border-radius:14px}
+  .pm-item{width:300px;height:205px;border-radius:8%}
   .pm-track{gap:16px}
 }
 
@@ -488,24 +474,6 @@ nav a:hover{color:#fff;background:rgba(255,255,255,.09)}
 .srv-icon{font-size:32px;margin-bottom:14px}
 .srv-name{font-family:'Barlow',sans-serif;font-size:19px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.2}
 .srv-desc{font-size:13.5px;color:rgba(255,255,255,.52);line-height:1.65}
-/* APP SHOWCASE (vídeo de demonstração) */
-.appshow{background:var(--gr);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
-.appshow-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto;padding:90px 5vw}
-.appshow-txt .sec-label{justify-content:flex-start}
-.appshow-title{font-family:'Barlow',sans-serif;font-size:clamp(28px,3.2vw,44px);font-weight:800;color:#fff;line-height:1.08;letter-spacing:-.01em;margin:14px 0 16px}
-.appshow-title .green{color:var(--g)}
-.appshow-p{font-size:15px;line-height:1.8;color:rgba(255,255,255,.62);margin-bottom:24px;max-width:520px}
-.appshow-list{display:flex;flex-direction:column;gap:13px;margin-bottom:30px}
-.appshow-li{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:rgba(255,255,255,.82);line-height:1.4}
-.appshow-li svg{width:20px;height:20px;color:var(--g);flex:none;margin-top:1px}
-.appshow-media{display:flex;justify-content:center}
-.phone-frame{position:relative;width:300px;max-width:78vw;border-radius:40px;padding:12px;background:linear-gradient(160deg,#16261c,#0a130d);border:1px solid rgba(255,255,255,.1);box-shadow:0 34px 80px -24px rgba(0,0,0,.75)}
-.phone-frame video{width:100%;display:block;border-radius:30px;background:#0a130d}
-@media(max-width:860px){
-  .appshow-grid{grid-template-columns:1fr;gap:38px;padding:62px 5vw}
-  .appshow-media{order:-1}
-  .appshow-p,.appshow-list{max-width:none}
-}
 .srv-link{
   display:inline-flex;align-items:center;gap:6px;
   margin-top:20px;color:var(--g);font-size:12.5px;font-weight:700;
@@ -619,15 +587,18 @@ nav a:hover{color:#fff;background:rgba(255,255,255,.09)}
 }
 .cta-bg-img{position:absolute;inset:0}
 .cta-bg-img img{width:100%;height:100%;object-fit:cover}
+#pg-home .cta-bg-animated{background:#06150e}
+#pg-home .cta-bg-animated .cta-bg-frame{position:absolute;inset:0;opacity:0;object-fit:cover;object-position:center;filter:brightness(1.12) contrast(1.08) saturate(.94);animation:ctaFrameFade 18s ease-in-out infinite}
+#pg-home .cta-bg-animated .cta-bg-frame-a{opacity:1;animation-delay:0s}
+#pg-home .cta-bg-animated .cta-bg-frame-b{animation-delay:9s}
+#pg-home .cta-bg-animated::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,12,8,.42),rgba(3,12,8,.66) 50%,rgba(3,12,8,.42));pointer-events:none}
+@keyframes ctaFrameFade{0%,42%{opacity:1;transform:scale(1)}50%,92%{opacity:0;transform:scale(1.035)}100%{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){#pg-home .cta-bg-animated .cta-bg-frame{animation:none}.cta-bg-frame-b{display:none!important}}
 .cta-overlay{
   position:absolute;inset:0;
   background:linear-gradient(135deg,rgba(5,12,5,.92) 0%,rgba(11,77,42,.86) 50%,rgba(5,12,5,.92) 100%);
 }
-.cta::before,.cta::after{
-  content:'';position:absolute;left:0;right:0;z-index:2;height:2px;
-  background:linear-gradient(90deg,transparent,var(--g) 30%,var(--g) 70%,transparent);
-}
-.cta::before{top:0}.cta::after{bottom:0}
+#pg-home .cta-overlay{background:linear-gradient(90deg,rgba(3,12,8,.34),rgba(3,12,8,.58) 50%,rgba(3,12,8,.34))}
 .cta-inner{position:relative;z-index:3;max-width:760px;margin:0 auto}
 .cta-badge{
   display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;
@@ -851,7 +822,7 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
 @media(max-width:900px){.sobre-intro{grid-template-columns:1fr;gap:32px}.mvv-grid{grid-template-columns:1fr}.dif-grid{grid-template-columns:1fr}}
 /* LAUDOS — uma única imagem de fundo cobrindo a página toda */
 #pg-laudos.page{background:var(--blk)}
-#pg-laudos .page-banner{min-height:340px;background:linear-gradient(to right,rgba(7,18,13,.82) 0%,rgba(7,18,13,.5) 60%,rgba(7,18,13,.4) 100%),url('img03.jpg') center/cover no-repeat;}
+#pg-laudos .page-banner{min-height:340px;background:linear-gradient(to right,rgba(7,18,13,.82) 0%,rgba(7,18,13,.5) 60%,rgba(7,18,13,.4) 100%),url('img-laudos-nova.jpg') center/cover no-repeat;}
 #pg-laudos .pb-ov{background:transparent}
 #pg-laudos .laudos-content{background:transparent !important}
 #pg-laudos .laudo-item{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07)}
@@ -893,6 +864,97 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
 .blog-cta-btns{display:flex;gap:14px;flex-wrap:wrap}
 @media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.blog-grid{grid-template-columns:1fr}}
+
+/* ===== Melhorias visuais aprovadas, sem alteração da estrutura ===== */
+@media (prefers-reduced-motion: no-preference){
+  .logo img{animation:protecworkLogoSpin 24s linear infinite;transform-style:preserve-3d}
+  .logo:hover img{animation-play-state:paused}
+  .srv-grid .srv-card{opacity:0;transform:translateX(58px);transition:opacity .72s ease,transform .78s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .3s}
+  .srv-grid .srv-card:nth-child(3){transform:translateX(-58px)}
+  .srv-grid.cards-ready .srv-card{opacity:1;transform:translateX(0)}
+  .srv-grid.cards-ready .srv-card:nth-child(1){transition-delay:.04s}
+  .srv-grid.cards-ready .srv-card:nth-child(2){transition-delay:.16s}
+  .srv-grid.cards-ready .srv-card:nth-child(3){transition-delay:.28s}
+  @keyframes protecworkLogoSpin{from{transform:rotateY(0deg)}to{transform:rotateY(360deg)}}
+}
+.srv-card:hover{box-shadow:0 18px 46px rgba(0,0,0,.28)}
+.srv-icon-img{overflow:hidden}
+.srv-icon-img img{transition:transform .65s cubic-bezier(.22,1,.36,1),filter .4s}
+.srv-card:hover .srv-icon-img img{transform:scale(1.045);filter:contrast(1.04) saturate(1.05)}
+@media(prefers-reduced-motion:reduce){.srv-grid .srv-card{opacity:1;transform:none}.logo img{animation:none}}
+
+
+/* Título principal com escrita progressiva */
+.hero-title.typewriter-ready{visibility:hidden}
+.hero-title.typewriter-live{visibility:visible}
+.hero-title .typing-caret{display:inline-block;width:3px;height:.82em;background:var(--g);margin-left:6px;vertical-align:-.08em;animation:typingCaret .8s step-end infinite}
+@keyframes typingCaret{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.hero-title.typewriter-ready{visibility:visible}.hero-title .typing-caret{display:none}}
+
+.typewriter-subtitle.typewriter-ready{visibility:hidden}
+.typewriter-subtitle.typewriter-live{visibility:visible}
+.typewriter-subtitle .typing-caret{display:inline-block;width:2px;height:.9em;background:var(--g);margin-left:4px;vertical-align:-.12em;animation:typingCaret .8s step-end infinite}
+@media(prefers-reduced-motion:reduce){.typewriter-subtitle.typewriter-ready{visibility:visible}.typewriter-subtitle .typing-caret{display:none}}
+
+
+.hero-title .typing-white{display:inline-block!important;white-space:nowrap!important;width:max-content}.hero-title .green{display:inline-block!important;white-space:nowrap!important}
+
+
+.hero-title .typing-line{display:block;white-space:nowrap}
+.hero-title .typing-line .typing-white{display:inline;white-space:nowrap}
+.hero-title .typing-line .green{display:inline;white-space:nowrap}
+
+
+/* ============ EFEITOS (Scan Effect / Wax Seal / Pulse Grid) ============ */
+.scan-canvas{position:absolute;inset:0;z-index:2;mix-blend-mode:screen;pointer-events:none}
+.wax-seal{position:absolute;bottom:8px;right:8px;width:60px;height:60px;z-index:3;
+  opacity:0;transform:scale(2.4) rotate(-38deg);
+  transition:opacity .5s ease, transform 1.15s cubic-bezier(.34,1.68,.4,1);
+  filter:drop-shadow(0 3px 8px rgba(0,0,0,.5));pointer-events:none}
+.wax-seal.stamped{opacity:1;transform:scale(1) rotate(-9deg)}
+.pulse-canvas{position:absolute;inset:0;z-index:1;mix-blend-mode:screen;pointer-events:none;opacity:.6}
+
+/* Ajustes de presença da marca e prova social */
+header{height:72px;padding-left:5vw;padding-right:5vw}
+.logo img{height:54px;filter:drop-shadow(0 3px 10px rgba(0,210,106,.16))}
+.depo-section{padding-top:108px;padding-bottom:108px}
+.depo-inner>.sec-label-dark,.depo-inner>.sec-title-dark,.depo-inner>.sec-sub-dark{display:flex;margin-left:auto;margin-right:auto;text-align:center;justify-content:center}
+.depo-inner>.sec-sub-dark{max-width:620px;margin-bottom:28px}
+.google-badge{position:relative;gap:18px;padding:20px 28px;margin:0 auto 46px;border-color:rgba(0,210,106,.38);box-shadow:0 10px 30px rgba(10,31,21,.1),0 0 0 4px rgba(0,210,106,.06)}
+.google-badge::before{content:'A confiança de quem já contratou';position:absolute;left:28px;top:-10px;padding:2px 9px;background:var(--g);color:var(--ink);border-radius:3px;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.google-badge-score strong{font-size:26px}
+.google-badge-count{font-weight:600}
+.depo-grid{gap:18px}
+.depo-card{border-top:3px solid rgba(0,210,106,.3);border-radius:10px;padding:28px;box-shadow:0 8px 24px rgba(10,31,21,.07)}
+.depo-card:hover{border-top-color:var(--g);transform:translateY(-5px);box-shadow:0 16px 34px rgba(10,31,21,.12)}
+@media(max-width:600px){header{height:64px}.logo img{height:46px}.depo-section{padding-top:76px;padding-bottom:76px}.google-badge{margin-top:10px;padding:18px 20px}.google-badge::before{left:20px}}
+
+.faq-section{position:relative;overflow:hidden}
+.faq-logo-mark{position:absolute;right:9%;top:28px;width:238px;height:104px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,var(--gd),#062317);border:1px solid rgba(0,210,106,.24);border-radius:10px;box-shadow:0 14px 34px rgba(10,31,21,.16);z-index:0}
+.faq-logo-mark::after{display:none}
+.faq-logo-mark img{width:190px;height:auto;filter:drop-shadow(0 5px 10px rgba(0,0,0,.26));animation:protecworkLogoSpin 24s linear infinite;transform-style:preserve-3d}
+.faq-inner{position:relative;z-index:1}
+@media(max-width:900px){.faq-logo-mark{right:5%;top:24px;width:190px;height:86px;opacity:.96}.faq-logo-mark img{width:150px}}
+@media(max-width:600px){.faq-logo-mark{display:none}}
+
+.photo-marquee{position:relative}
+/* Galeria em tela ampliada ao clicar */
+.gallery-lightbox{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;padding:30px;background:rgba(2,8,5,.92);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s ease;cursor:zoom-out}
+.gallery-lightbox.is-open{opacity:1;visibility:visible}
+.gallery-lightbox img{display:block;max-width:min(94vw,1400px);max-height:88vh;width:auto;height:auto;object-fit:contain;border-radius:8px;box-shadow:0 24px 80px rgba(0,0,0,.55);transform:scale(.96);transition:transform .25s cubic-bezier(.23,1,.32,1);cursor:default}
+.gallery-lightbox.is-open img{transform:scale(1)}
+.gallery-lightbox-close{position:absolute;top:22px;right:28px;width:42px;height:42px;border:1px solid rgba(255,255,255,.24);border-radius:50%;background:rgba(0,0,0,.28);color:#fff;font-size:28px;line-height:1;cursor:pointer}
+.gallery-lightbox-caption{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);max-width:80vw;color:rgba(255,255,255,.76);font-size:13px;text-align:center;line-height:1.45}
+.gal-grid img{cursor:zoom-in}.pm-track img{cursor:pointer}
+@media(prefers-reduced-motion:reduce){.gallery-lightbox,.gallery-lightbox img{transition:none}}
+#pg-contato .pb-bg-url{background-position:60% center !important}
+@media(max-width:700px){#pg-contato .pb-bg-url{background-position:67% center !important}}
+.photo-marquee::before{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size:220px 220px;
+}
 </style>
 </head>
 <body>
@@ -900,7 +962,7 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
 <!-- ══ HEADER ══ -->
 <header id="hdr">
   <a class="logo" onclick="nav('home')">
-    <img src="img04.png" alt="Protecwork Treinamentos">
+    <img src="https://www.protecworktreinamentos.com.br/img04.png" alt="Protecwork Treinamentos">
   </a>
   <nav>
     <a onclick="nav('home')">Início</a>
@@ -998,21 +1060,21 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
         <div class="srv-grid">
           <div class="srv-card" onclick="nav('treinamentos')">
             <div class="srv-num">01 — TREINAMENTOS</div>
-            <div class="srv-icon-img"><img src="img05.jpg" alt="Treinamentos NR"></div>
+            <div class="srv-icon-img"><img src="https://www.protecworktreinamentos.com.br/img05.jpg" alt="Treinamentos NR"></div>
             <div class="srv-name">Treinamentos em Normas Regulamentadoras</div>
             <div class="srv-desc">NR-35, NR-33, NR-10, NR-11, NR-18, NR-20, Brigada de Incêndio e Primeiros Socorros. Realizados in company, com certificação válida e instrutores habilitados.</div>
             <div class="srv-link">Ver cursos disponíveis →</div>
           </div>
           <div class="srv-card" onclick="nav('linhadevida')">
             <div class="srv-num">02 — INSPEÇÃO</div>
-            <div class="srv-icon-img"><img src="img06.jpg" alt="Inspeção de Linha de Vida"></div>
+            <div class="srv-icon-img"><img src="https://www.protecworktreinamentos.com.br/img06.jpg" alt="Inspeção de Linha de Vida"></div>
             <div class="srv-name">Inspeção e Certificação de Linha de Vida</div>
             <div class="srv-desc">Inspeção técnica especializada de sistemas de ancoragem e linha de vida horizontal/vertical. Relatórios, laudos e ART emitidos por engenheiro habilitado.</div>
             <div class="srv-link">Agendar inspeção →</div>
           </div>
           <div class="srv-card" onclick="nav('laudos')">
             <div class="srv-num">03 — ENGENHARIA</div>
-            <div class="srv-icon-img"><img src="img07.jpg" alt="Laudos de Engenharia — engenheiro analisando documentação técnica" style="width:100%;aspect-ratio:305/170;object-fit:cover;object-position:center 52%;display:block"></div>
+            <div class="srv-icon-img"><img src="https://www.protecworktreinamentos.com.br/img07.jpg" alt="Laudos de Engenharia — engenheiro analisando documentação técnica" style="width:100%;aspect-ratio:305/170;object-fit:cover;object-position:center 52%;display:block"></div>
             <div class="srv-name">Laudos de Engenharia e Documentação</div>
             <div class="srv-desc">Laudos técnicos, ART, pareceres, PGR, LTCAT, PPP e demais documentos obrigatórios. Respaldo jurídico e conformidade legal garantidos para sua empresa.</div>
             <div class="srv-link">Solicitar laudo →</div>
@@ -1022,34 +1084,9 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
     </div>
   </div>
 
-  <!-- APP SHOWCASE -->
-  <div class="section-full appshow">
-    <div class="appshow-grid">
-      <div class="appshow-txt">
-        <div class="sec-label">Software Próprio · Gestão de Segurança</div>
-        <h2 class="appshow-title">Gestão de <span class="green">CIPA (NR-5)</span><br>na palma da mão</h2>
-        <p class="appshow-p">Um aplicativo completo para organizar todo o ciclo da CIPA da sua empresa — do cronograma de implantação ao controle das reuniões — com prazos, alertas e acompanhamento do mandato em tempo real.</p>
-        <div class="appshow-list">
-          <div class="appshow-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Cronograma de implantação da NR-5 com prazos e etapas</span></div>
-          <div class="appshow-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Controle de reuniões, pautas, atas e deliberações</span></div>
-          <div class="appshow-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Cadastro de membros, acompanhamento do mandato e progresso</span></div>
-          <div class="appshow-li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Acesso pelo celular, a qualquer hora e lugar</span></div>
-        </div>
-        <div class="hero-btns">
-          <a href="https://wa.me/5542999684522?text=Ol%C3%A1!%20Vi%20o%20app%20de%20gest%C3%A3o%20de%20CIPA%20(NR-5)%20no%20site%20da%20Protecwork%20e%20gostaria%20de%20conhecer%20melhor." target="_blank" class="btn-primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.4 4.4 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.63z"/></svg> Quero conhecer o app</a>
-        </div>
-      </div>
-      <div class="appshow-media">
-        <div class="phone-frame">
-          <video src="cipa-demo.mp4" poster="img08.jpg" controls playsinline preload="metadata"></video>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- CTA -->
   <div class="cta">
-    <div class="cta-bg-img"><img src="img09.jpg" alt="Background segurança do trabalho digital premium" loading="lazy"></div>
+    <div class="cta-bg-img cta-bg-animated"><img class="cta-bg-frame cta-bg-frame-a" src="cta-bg-a.jpg" alt="Profissional de segurança em área industrial ao entardecer"><img class="cta-bg-frame cta-bg-frame-b" src="cta-bg-b.jpg" alt="Equipamentos de segurança em área industrial"></div>
     <div class="cta-overlay"></div>
     <div class="cta-inner">
       <div class="cta-badge">
@@ -1081,15 +1118,15 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
       </div>
       <div class="cases-grid">
         <div class="case-card">
-          <div class="case-img"><img src="img10.jpg" alt="Treinamento NR-35 — trabalho em altura" loading="lazy"></div>
+          <div class="case-img"><img src="https://www.protecworktreinamentos.com.br/img10.jpg" alt="Treinamento NR-35 — trabalho em altura" loading="lazy"></div>
           <div class="case-body"><div class="case-tag">TREINAMENTO NR-35</div><div class="case-title">Capacitação de equipe industrial</div><div class="case-desc">Turma completa treinada em trabalho em altura, com certificação e procedimentos de resgate implementados.</div></div>
         </div>
         <div class="case-card">
-          <div class="case-img"><img src="img11.jpg" alt="Inspeção e certificação de linha de vida" loading="lazy"></div>
+          <div class="case-img"><img src="https://www.protecworktreinamentos.com.br/img11.jpg" alt="Inspeção e certificação de linha de vida" loading="lazy"></div>
           <div class="case-body"><div class="case-tag">LINHA DE VIDA</div><div class="case-title">Inspeção e certificação de sistema</div><div class="case-desc">Vistoria técnica completa de ancoragens e linha de vida, com laudo e ART emitidos por engenheiro habilitado.</div></div>
         </div>
         <div class="case-card">
-          <div class="case-img"><img src="img12.jpg" alt="Laudo técnico de engenharia" loading="lazy"></div>
+          <div class="case-img"><img src="https://www.protecworktreinamentos.com.br/img12.jpg" alt="Laudo técnico de engenharia" loading="lazy"></div>
           <div class="case-body"><div class="case-tag">LAUDO TÉCNICO</div><div class="case-title">Documentação de conformidade</div><div class="case-desc">Elaboração de laudos e pareceres técnicos garantindo conformidade legal e respaldo jurídico à empresa.</div></div>
         </div>
       </div>
@@ -1108,7 +1145,7 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
         <svg width="22" height="22" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>
         <div class="google-badge-info">
           <div class="google-badge-score"><strong>5,0</strong> <span class="gstars">★★★★★</span></div>
-          <div class="google-badge-count">93 avaliações no Google</div>
+          <div class="google-badge-count">112 avaliações no Google</div>
         </div>
         <div class="google-badge-cta">Ver no Google →</div>
       </a>
@@ -1192,6 +1229,7 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
 
   <!-- FAQ -->
   <div class="faq-section">
+    <div class="faq-logo-mark" aria-hidden="true"><img src="https://www.protecworktreinamentos.com.br/img04.png" alt=""></div>
     <div class="faq-inner">
       <div class="sec-label-dark">Dúvidas Frequentes</div>
       <h2 class="sec-title-dark">Perguntas Frequentes</h2>
@@ -1211,7 +1249,7 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
 <!-- ══════════════════ TREINAMENTOS ══════════════════ -->
 <div id="pg-treinamentos" class="page">
   <div class="page-banner">
-    <div class="pb-bg"><img src="img13.jpg" alt="Treinamento de Segurança Industrial" loading="lazy" style="object-position:center 40%"></div>
+    <div class="pb-bg"><img src="img-treinamentos-nova.jpg" alt="Equipe recebendo briefing de segurança com EPIs" loading="eager" fetchpriority="high" decoding="async" style="object-position:center 30%"></div>
     <div class="pb-ov"></div>
     <div class="pb-cnt">
       <div class="pg-eye">Treinamentos Corporativos</div>
@@ -1227,18 +1265,18 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
         <p class="sec-sub">Todos os treinamentos seguem as exigências das NRs do Ministério do Trabalho e Emprego</p>
       </div>
       <div class="nr-grid">
-        <div class="nr-card"><div class="nr-img-wrap"><img src="img14.jpg" alt="NR-35 Trabalho em Altura" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-35</span><div class="nr-name">Trabalho em Altura</div><div class="nr-desc">Capacitação para trabalhadores acima de 2m. EPI, ancoragem, linha de vida e resgate vertical.</div><div class="nr-meta"><div class="nr-meta-i"><strong>8h / 16h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>2 anos</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-35" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
-        <div class="nr-card"><div class="nr-img-wrap"><img src="img15.jpg" alt="NR-33 Espaço Confinado" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-33</span><div class="nr-name">Espaço Confinado</div><div class="nr-desc">Vigia, Trabalhador Autorizado e Supervisor de Entrada. Identificação de riscos, medição de gases e resgate.</div><div class="nr-meta"><div class="nr-meta-i"><strong>16h / 24h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>1 ano</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-33" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
-        <div class="nr-card"><div class="nr-img-wrap"><img src="img16.jpg" alt="NR-10 Eletricidade" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-10</span><div class="nr-name">Segurança em Eletricidade</div><div class="nr-desc">Instalações elétricas energizadas e desenergizadas. Prevenção de choque e arco voltaico. Bloqueio/etiquetagem.</div><div class="nr-meta"><div class="nr-meta-i"><strong>40h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>2 anos</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-10" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
-        <div class="nr-card"><div class="nr-img-wrap"><img src="img17.jpg" alt="NR-11 Empilhadeiras" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-11</span><div class="nr-name">Operação de Empilhadeiras</div><div class="nr-desc">Habilitação teórica e prática. Inspeção diária, limites de carga e condução segura em ambiente industrial.</div><div class="nr-meta"><div class="nr-meta-i"><strong>40h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>3 anos</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-11" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
-        <div class="nr-card"><div class="nr-img-wrap"><img src="img18.jpg" alt="NR-18 Construção Civil" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-18</span><div class="nr-name">Construção Civil</div><div class="nr-desc">Prevenção em canteiros de obra, proteção coletiva, andaimes, escavações e demolições.</div><div class="nr-meta"><div class="nr-meta-i"><strong>8h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>1 ano</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-18" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
-        <div class="nr-card"><div class="nr-img-wrap"><img src="img19.jpg" alt="NR-20 Inflamáveis" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-20</span><div class="nr-name">Inflamáveis e Combustíveis</div><div class="nr-desc">Armazenamento e manuseio seguro. Prevenção de incêndios e explosões em postos e indústrias.</div><div class="nr-meta"><div class="nr-meta-i"><strong>8h / 20h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>2 anos</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-20" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
-        <div class="nr-card"><div class="nr-img-wrap"><img src="img20.jpg" alt="Brigada de Incêndio" loading="lazy"></div><div class="nr-body"><span class="nr-tag">Brigada</span><div class="nr-name">Brigada de Incêndio</div><div class="nr-desc">Formação conforme IT-16 do Corpo de Bombeiros. Extintores, mangueiras, evacuação e abandono de área.</div><div class="nr-meta"><div class="nr-meta-i"><strong>16h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>1 ano</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20Brigada" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
-        <div class="nr-card"><div class="nr-img-wrap"><img src="img21.jpg" alt="Primeiros Socorros" loading="lazy"></div><div class="nr-body"><span class="nr-tag">Primeiros Socorros</span><div class="nr-name">Primeiros Socorros</div><div class="nr-desc">RCP com DEA, Heimlich, controle de hemorragias, imobilização e atendimento ao politraumatizado.</div><div class="nr-meta"><div class="nr-meta-i"><strong>16h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>2 anos</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20Primeiros%20Socorros" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
-        <div class="nr-card"><div class="nr-img-wrap"><img src="img22.jpg" alt="NR-34 Trabalho a Quente" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-34</span><div class="nr-name">Trabalho a Quente</div><div class="nr-desc">Soldagem, corte e atividades com chama aberta na indústria naval e da construção. Prevenção de incêndios, queimaduras e explosões.</div><div class="nr-meta"><div class="nr-meta-i"><strong>8h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>1 ano</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-34%20Trabalho%20a%20Quente" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
-        <div class="nr-card"><div class="nr-img-wrap"><img src="img23.jpg" alt="NR-13 Caldeiras e Vasos de Pressão" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-13</span><div class="nr-name">Caldeiras e Vasos de Pressão</div><div class="nr-desc">Operação segura de caldeiras, vasos de pressão e tubulações. Prevenção de acidentes em equipamentos sob pressão na indústria.</div><div class="nr-meta"><div class="nr-meta-i"><strong>40h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>Conforme</strong>Categoria</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-13%20Caldeiras" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
-        <div class="nr-card"><div class="nr-img-wrap"><img src="img24.jpg" alt="NR-6 Equipamento de Proteção Individual" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-6</span><div class="nr-name">EPI — Equipamento de Proteção Individual</div><div class="nr-desc">Seleção, uso correto, guarda e conservação de EPIs. Responsabilidades do empregador e do trabalhador conforme a norma.</div><div class="nr-meta"><div class="nr-meta-i"><strong>4h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>Anual</strong>Reciclagem</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-6%20EPI" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
-        <div class="nr-card"><div class="nr-img-wrap"><img src="img25.jpg" alt="CIPA Comissão Interna de Prevenção de Acidentes" loading="lazy"></div><div class="nr-body"><span class="nr-tag">CIPA</span><div class="nr-name">CIPA — Comissão Interna de Prevenção de Acidentes</div><div class="nr-desc">Capacitação de membros da CIPA conforme NR-5. Prevenção de acidentes e doenças ocupacionais, mapa de riscos e reuniões internas.</div><div class="nr-meta"><div class="nr-meta-i"><strong>20h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>Anual</strong>Mandato</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20CIPA" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
+        <div class="nr-card"><div class="nr-img-wrap"><img src="https://www.protecworktreinamentos.com.br/img14.jpg" alt="NR-35 Trabalho em Altura" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-35</span><div class="nr-name">Trabalho em Altura</div><div class="nr-desc">Capacitação para trabalhadores acima de 2m. EPI, ancoragem, linha de vida e resgate vertical.</div><div class="nr-meta"><div class="nr-meta-i"><strong>8h / 16h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>2 anos</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-35" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
+        <div class="nr-card"><div class="nr-img-wrap"><img src="https://www.protecworktreinamentos.com.br/img15.jpg" alt="NR-33 Espaço Confinado" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-33</span><div class="nr-name">Espaço Confinado</div><div class="nr-desc">Vigia, Trabalhador Autorizado e Supervisor de Entrada. Identificação de riscos, medição de gases e resgate.</div><div class="nr-meta"><div class="nr-meta-i"><strong>16h / 24h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>1 ano</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-33" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
+        <div class="nr-card"><div class="nr-img-wrap"><img src="https://www.protecworktreinamentos.com.br/img16.jpg" alt="NR-10 Eletricidade" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-10</span><div class="nr-name">Segurança em Eletricidade</div><div class="nr-desc">Instalações elétricas energizadas e desenergizadas. Prevenção de choque e arco voltaico. Bloqueio/etiquetagem.</div><div class="nr-meta"><div class="nr-meta-i"><strong>40h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>2 anos</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-10" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
+        <div class="nr-card"><div class="nr-img-wrap"><img src="https://www.protecworktreinamentos.com.br/img17.jpg" alt="NR-11 Empilhadeiras" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-11</span><div class="nr-name">Operação de Empilhadeiras</div><div class="nr-desc">Habilitação teórica e prática. Inspeção diária, limites de carga e condução segura em ambiente industrial.</div><div class="nr-meta"><div class="nr-meta-i"><strong>40h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>3 anos</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-11" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
+        <div class="nr-card"><div class="nr-img-wrap"><img src="https://www.protecworktreinamentos.com.br/img18.jpg" alt="NR-18 Construção Civil" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-18</span><div class="nr-name">Construção Civil</div><div class="nr-desc">Prevenção em canteiros de obra, proteção coletiva, andaimes, escavações e demolições.</div><div class="nr-meta"><div class="nr-meta-i"><strong>8h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>1 ano</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-18" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
+        <div class="nr-card"><div class="nr-img-wrap"><img src="https://www.protecworktreinamentos.com.br/img19.jpg" alt="NR-20 Inflamáveis" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-20</span><div class="nr-name">Inflamáveis e Combustíveis</div><div class="nr-desc">Armazenamento e manuseio seguro. Prevenção de incêndios e explosões em postos e indústrias.</div><div class="nr-meta"><div class="nr-meta-i"><strong>8h / 20h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>2 anos</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-20" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
+        <div class="nr-card"><div class="nr-img-wrap"><img src="https://www.protecworktreinamentos.com.br/img20.jpg" alt="Brigada de Incêndio" loading="lazy"></div><div class="nr-body"><span class="nr-tag">Brigada</span><div class="nr-name">Brigada de Incêndio</div><div class="nr-desc">Formação conforme IT-16 do Corpo de Bombeiros. Extintores, mangueiras, evacuação e abandono de área.</div><div class="nr-meta"><div class="nr-meta-i"><strong>16h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>1 ano</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20Brigada" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
+        <div class="nr-card"><div class="nr-img-wrap"><img src="https://www.protecworktreinamentos.com.br/img21.jpg" alt="Primeiros Socorros" loading="lazy"></div><div class="nr-body"><span class="nr-tag">Primeiros Socorros</span><div class="nr-name">Primeiros Socorros</div><div class="nr-desc">RCP com DEA, Heimlich, controle de hemorragias, imobilização e atendimento ao politraumatizado.</div><div class="nr-meta"><div class="nr-meta-i"><strong>16h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>2 anos</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20Primeiros%20Socorros" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
+        <div class="nr-card"><div class="nr-img-wrap"><img src="https://www.protecworktreinamentos.com.br/img22.jpg" alt="NR-34 Trabalho a Quente" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-34</span><div class="nr-name">Trabalho a Quente</div><div class="nr-desc">Soldagem, corte e atividades com chama aberta na indústria naval e da construção. Prevenção de incêndios, queimaduras e explosões.</div><div class="nr-meta"><div class="nr-meta-i"><strong>8h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>1 ano</strong>Validade</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-34%20Trabalho%20a%20Quente" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
+        <div class="nr-card"><div class="nr-img-wrap"><img src="https://www.protecworktreinamentos.com.br/img23.jpg" alt="NR-13 Caldeiras e Vasos de Pressão" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-13</span><div class="nr-name">Caldeiras e Vasos de Pressão</div><div class="nr-desc">Operação segura de caldeiras, vasos de pressão e tubulações. Prevenção de acidentes em equipamentos sob pressão na indústria.</div><div class="nr-meta"><div class="nr-meta-i"><strong>40h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>Conforme</strong>Categoria</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-13%20Caldeiras" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
+        <div class="nr-card"><div class="nr-img-wrap"><img src="https://www.protecworktreinamentos.com.br/img24.jpg" alt="NR-6 Equipamento de Proteção Individual" loading="lazy"></div><div class="nr-body"><span class="nr-tag">NR-6</span><div class="nr-name">EPI — Equipamento de Proteção Individual</div><div class="nr-desc">Seleção, uso correto, guarda e conservação de EPIs. Responsabilidades do empregador e do trabalhador conforme a norma.</div><div class="nr-meta"><div class="nr-meta-i"><strong>4h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>Anual</strong>Reciclagem</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20NR-6%20EPI" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
+        <div class="nr-card"><div class="nr-img-wrap"><img src="https://www.protecworktreinamentos.com.br/img25.jpg" alt="CIPA Comissão Interna de Prevenção de Acidentes" loading="lazy"></div><div class="nr-body"><span class="nr-tag">CIPA</span><div class="nr-name">CIPA — Comissão Interna de Prevenção de Acidentes</div><div class="nr-desc">Capacitação de membros da CIPA conforme NR-5. Prevenção de acidentes e doenças ocupacionais, mapa de riscos e reuniões internas.</div><div class="nr-meta"><div class="nr-meta-i"><strong>20h</strong>Carga horária</div><div class="nr-meta-i"><strong>In Company</strong>Modalidade</div><div class="nr-meta-i"><strong>Anual</strong>Mandato</div></div><div class="nr-btns"><a href="https://wa.me/5542999684522?text=Orçamento%20CIPA" target="_blank" class="bsm bsm-g">Solicitar Orçamento</a><a href="https://wa.me/5542999684522?text=Ol%C3%A1%2C%20equipe%20da%20PROTECWORK%20Treinamentos.%20Acessei%20o%20site%20e%20gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos%20oferecidos%20pela%20empresa.%20Por%20favor%2C%20poderiam%20me%20orientar%20sobre%20valores%2C%20disponibilidade%20e%20pr%C3%B3ximos%20treinamentos%3F%20Aguardo%20retorno.%20Obrigado." target="_blank" class="bsm bsm-w">WhatsApp</a></div></div></div>
         <div class="nr-card nr-card-more" onclick="window.open('https://wa.me/5542999684522?text=Quero%20conhecer%20todos%20os%20treinamentos%20disponíveis','_blank')">
           <div class="nr-more-inner">
             <div class="nr-more-icon">+</div>
@@ -1251,7 +1289,7 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
     </div>
   </div>
   <div class="cta">
-    <div class="cta-bg-img"><img src="img09.jpg" alt="Background digital segurança" loading="lazy"></div>
+    <div class="cta-bg-img"><img src="img-cta-nova.jpg" style="object-position:center 28%" alt="Background digital segurança" loading="lazy"></div>
     <div class="cta-overlay"></div>
     <div class="cta-inner">
       <div class="cta-badge">Treinamento In Company</div>
@@ -1265,7 +1303,7 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
 <!-- ══════════════════ LINHA DE VIDA ══════════════════ -->
 <div id="pg-linhadevida" class="page">
   <div class="page-banner">
-    <div class="pb-bg"><img src="img06.jpg" alt="Inspeção de Linha de Vida em Telhado Industrial" loading="lazy" style="object-position:center 32%"></div>
+    <div class="pb-bg"><img src="img-linhadevida-nova.jpg" alt="Técnico ancorado em linha de vida no telhado ao entardecer" loading="eager" decoding="async" style="object-position:center 30%"></div>
     <div class="pb-ov"></div>
     <div class="pb-cnt">
       <div class="pg-eye">Inspeção Técnica</div>
@@ -1281,14 +1319,14 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
         <p class="sec-sub">Conformidade técnica e legal para seus sistemas de proteção coletiva contra quedas em altura</p>
       </div>
       <div class="liv-grid">
-        <div class="liv-card"><div class="liv-img"><img src="img06.jpg" alt="Inspeção de âncoras e cabos de aço" loading="lazy"></div><div class="liv-body"><div class="liv-name">🔍 Inspeção Técnica</div><div class="liv-desc">Vistoria de ancoragens, cabos, conectores e estruturas com registro fotográfico detalhado.</div></div></div>
-        <div class="liv-card"><div class="liv-img"><img src="img26.jpg" alt="Relatório técnico em tablet e prancheta" loading="lazy"></div><div class="liv-body"><div class="liv-name">📄 Relatórios Técnicos</div><div class="liv-desc">Documentação completa com condições encontradas e recomendações de manutenção preventiva.</div></div></div>
-        <div class="liv-card"><div class="liv-img"><img src="img27.jpg" alt="Documento de inspeção com selo oficial" loading="lazy"></div><div class="liv-body"><div class="liv-name">📋 Laudos de Inspeção</div><div class="liv-desc">Laudo assinado por engenheiro habilitado atestando conformidade dos sistemas de linha de vida.</div></div></div>
-        <div class="liv-card"><div class="liv-img"><img src="img28.jpg" alt="Documento ART com capacete de segurança" loading="lazy"></div><div class="liv-body"><div class="liv-name">✅ ART de Engenharia</div><div class="liv-desc">Anotação de Responsabilidade Técnica junto ao CREA-PR com validade legal plena.</div></div></div>
-        <div class="liv-card"><div class="liv-img"><img src="img29.jpg" alt="Certificação NBR NR-35 documentação" loading="lazy"></div><div class="liv-body"><div class="liv-name">🏅 Certificações</div><div class="liv-desc">Certificação dos sistemas aprovados conforme normas NBR e NR-35 vigentes.</div></div></div>
-        <div class="liv-card"><div class="liv-img"><img src="img30.jpg" alt="Engenheiros analisando projeto técnico" loading="lazy"></div><div class="liv-body"><div class="liv-name">🔧 Consultoria Técnica</div><div class="liv-desc">Orientação sobre dimensionamento, instalação e manutenção de sistemas contra quedas.</div></div></div>
-      <div class="liv-card"><div class="liv-img"><img src="img31.jpg" alt="Projeto de prevenção e combate a incêndio PPCI" loading="lazy"></div><div class="liv-body"><div class="liv-name">🔥 Projeto de Prevenção a Incêndio</div><div class="liv-desc">Elaboração de PPCI conforme exigências do Corpo de Bombeiros, com projeto técnico, ART e acompanhamento da aprovação.</div></div></div>
-      <div class="liv-card"><div class="liv-img"><img src="img32.jpg" alt="Prestação de serviço de técnicos de segurança do trabalho Protecwork" loading="lazy"></div><div class="liv-body"><div class="liv-name">👷 Técnico de Segurança do Trabalho</div><div class="liv-desc">Prestação de serviço de Técnico de Segurança do Trabalho para sua empresa, com acompanhamento de obras, atividades de risco e conformidade com as NRs.</div></div></div>
+        <div class="liv-card"><div class="liv-img"><img src="https://www.protecworktreinamentos.com.br/img06.jpg" alt="Inspeção de âncoras e cabos de aço" loading="lazy"></div><div class="liv-body"><div class="liv-name">🔍 Inspeção Técnica</div><div class="liv-desc">Vistoria de ancoragens, cabos, conectores e estruturas com registro fotográfico detalhado.</div></div></div>
+        <div class="liv-card"><div class="liv-img"><img src="https://www.protecworktreinamentos.com.br/img26.jpg" alt="Relatório técnico em tablet e prancheta" loading="lazy"></div><div class="liv-body"><div class="liv-name">📄 Relatórios Técnicos</div><div class="liv-desc">Documentação completa com condições encontradas e recomendações de manutenção preventiva.</div></div></div>
+        <div class="liv-card"><div class="liv-img"><img src="https://www.protecworktreinamentos.com.br/img27.jpg" alt="Documento de inspeção com selo oficial" loading="lazy"></div><div class="liv-body"><div class="liv-name">📋 Laudos de Inspeção</div><div class="liv-desc">Laudo assinado por engenheiro habilitado atestando conformidade dos sistemas de linha de vida.</div></div></div>
+        <div class="liv-card"><div class="liv-img" style="position:relative"><img src="https://www.protecworktreinamentos.com.br/img28.jpg" alt="Documento ART com capacete de segurança" loading="lazy"><svg class="wax-seal" id="artWaxSeal" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M 50.0,4.0 L 56.26,10.49 L 64.21,6.25 L 68.16,14.36 L 77.04,12.79 L 78.28,21.72 L 87.21,22.96 L 85.64,31.84 L 93.75,35.79 L 89.51,43.74 L 96.0,50.0 L 89.51,56.26 L 93.75,64.21 L 85.64,68.16 L 87.21,77.04 L 78.28,78.28 L 77.04,87.21 L 68.16,85.64 L 64.21,93.75 L 56.26,89.51 L 50.0,96.0 L 43.74,89.51 L 35.79,93.75 L 31.84,85.64 L 22.96,87.21 L 21.72,78.28 L 12.79,77.04 L 14.36,68.16 L 6.25,64.21 L 10.49,56.26 L 4.0,50.0 L 10.49,43.74 L 6.25,35.79 L 14.36,31.84 L 12.79,22.96 L 21.72,21.72 L 22.96,12.79 L 31.84,14.36 L 35.79,6.25 L 43.74,10.49 Z" fill="#00D26A" stroke="#0B4D2A" stroke-width="1.5"/><circle cx="50" cy="50" r="34" fill="none" stroke="#0B4D2A" stroke-width="1" stroke-dasharray="2,3" opacity=".6"/><path d="M34 51 L44 61 L67 37" fill="none" stroke="#07120d" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><text x="50" y="76" text-anchor="middle" font-family="Barlow, sans-serif" font-weight="800" font-size="9" fill="#07120d" letter-spacing="1">CREA-PR</text></svg></div><div class="liv-body"><div class="liv-name">✅ ART de Engenharia</div><div class="liv-desc">Anotação de Responsabilidade Técnica junto ao CREA-PR com validade legal plena.</div></div></div>
+        <div class="liv-card"><div class="liv-img"><img src="https://www.protecworktreinamentos.com.br/img29.jpg" alt="Certificação NBR NR-35 documentação" loading="lazy"></div><div class="liv-body"><div class="liv-name">🏅 Certificações</div><div class="liv-desc">Certificação dos sistemas aprovados conforme normas NBR e NR-35 vigentes.</div></div></div>
+        <div class="liv-card"><div class="liv-img"><img src="img-consultoria.jpg" alt="Consultor técnico orientando cliente em ambiente industrial" loading="lazy" style="object-position:center 25%"></div><div class="liv-body"><div class="liv-name">🔧 Consultoria Técnica</div><div class="liv-desc">Orientação sobre dimensionamento, instalação e manutenção de sistemas contra quedas.</div></div></div>
+      <div class="liv-card"><div class="liv-img"><img src="https://www.protecworktreinamentos.com.br/img31.jpg" alt="Projeto de prevenção e combate a incêndio PPCI" loading="lazy"></div><div class="liv-body"><div class="liv-name">🔥 Projeto de Prevenção a Incêndio</div><div class="liv-desc">Elaboração de PPCI conforme exigências do Corpo de Bombeiros, com projeto técnico, ART e acompanhamento da aprovação.</div></div></div>
+      <div class="liv-card"><div class="liv-img"><img src="https://www.protecworktreinamentos.com.br/img32.jpg" alt="Prestação de serviço de técnicos de segurança do trabalho Protecwork" loading="lazy"></div><div class="liv-body"><div class="liv-name">👷 Técnico de Segurança do Trabalho</div><div class="liv-desc">Prestação de serviço de Técnico de Segurança do Trabalho para sua empresa, com acompanhamento de obras, atividades de risco e conformidade com as NRs.</div></div></div>
       </div>
       <div style="text-align:center;margin-top:8px">
         <a href="https://wa.me/5542999684522?text=Quero%20agendar%20inspeção%20de%20linha%20de%20vida." target="_blank" class="btn-primary" style="display:inline-flex">Solicitar Inspeção</a>
@@ -1303,26 +1341,25 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
         <p class="sec-sub">Registros de inspeções e sistemas vistoriados pela nossa equipe de engenharia</p>
       </div>
       <div class="gal-grid">
-        <div class="gal-wrap"><img src="img33.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 1" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img34.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 2" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img35.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 3" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img36.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 4" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img37.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 5" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img38.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 6" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img39.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 7" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img40.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 8" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img41.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 9" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img42.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 10" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img43.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 11" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img44.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 12" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img45.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 13" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img46.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 14" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img47.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 15" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img48.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 16" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img49.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 17" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img50.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 18" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img51.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 19" loading="lazy"></div>
-        <div class="gal-wrap"><img src="img52.jpg" alt="Trabalho real Protecwork — treinamento e inspeção 20" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-01.jpg" alt="Colaborador com miniatura de empilhadeira em treinamento" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-02.jpg" alt="Turma de 10 profissionais com certificados de conclusão" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-03.jpg" alt="Equipe transportando vítima simulada em maca com colar cervical" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-04.jpg" alt="Montagem de tripé de resgate em treinamento de altura" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-05.jpg" alt="Turma ajoelhada após treinamento NR-33 Espaço Confinado" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-06.jpg" alt="Painel de equipamentos de resgate — macas, capacetes e kits" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-07.jpg" alt="Simulação prática de primeiros socorros" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-08.jpg" alt="Teste de detector de gases em espaço confinado" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-09.jpg" alt="Técnico em escada com cinto de segurança em via pública" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-10.jpg" alt="Colaborador com miniatura de empilhadeira em portão industrial" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-11.jpg" alt="Resgate em escada vertical com sistema de ancoragem" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-12.jpg" alt="Instrutor demonstrando nós técnicos de resgate" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-13.jpg" alt="Maca içada em tripé de resgate em altura" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-14.jpg" alt="Bombeiro controlando princípio de incêndio em treinamento" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-15.jpg" alt="Combate a incêndio com extintor em treinamento prático" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-16.jpg" alt="Equipe de resgate em silo industrial com maca" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-17.jpg" alt="Equipe imobilizando vítima simulada em maca laranja" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-18.jpg" alt="Dois técnicos montando tripé de resgate" loading="lazy"></div>
+        <div class="gal-wrap"><img src="img-galeria-19.jpg" alt="Técnicos imobilizando vítima simulada em maca amarela" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -1365,7 +1402,7 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
 <div id="pg-sobre" class="page">
   <div class="page-banner">
     
-    <div class="pb-bg"><img src="img53.jpg" alt="Equipe de segurança do trabalho em inspeção industrial" loading="lazy" style="object-position:center 75%"></div>
+    <div class="pb-bg"><img src="img-sobre-nova.jpg" alt="Equipe da Protecwork em ambiente industrial" loading="eager" decoding="async" style="object-position:center 22%"></div>
     <div class="pb-ov"></div>
     <div class="pb-cnt">
       <div class="pg-eye">Nossa História</div>
@@ -1385,7 +1422,7 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
           <p class="sobre-txt">Trabalhamos com base nas Normas Regulamentadoras do MTE e nas melhores práticas nacionais, garantindo conformidade legal e proteção da vida dos trabalhadores.</p>
         </div>
         <div class="sobre-intro-img">
-          <img src="img04.png" alt="Logo Protecwork Treinamentos" loading="lazy">
+          <img src="https://www.protecworktreinamentos.com.br/img04.png" alt="Logo Protecwork Treinamentos" loading="lazy">
         </div>
       </div>
 
@@ -1394,7 +1431,7 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
         <div class="sstat"><div class="sstat-v">+1K</div><div class="sstat-l">Profissionais Treinados</div></div>
         <div class="sstat"><div class="sstat-v">100%</div><div class="sstat-l">Certificados Válidos</div></div>
         <div class="sstat"><div class="sstat-v">20+</div><div class="sstat-l">Normas Atendidas</div></div>
-        <div class="sstat"><div class="sstat-v">5,0★</div><div class="sstat-l">93 Avaliações Google</div></div>
+        <div class="sstat"><div class="sstat-v">5,0★</div><div class="sstat-l">112 Avaliações Google</div></div>
       </div>
 
       <!-- Missão / Visão / Valores -->
@@ -1424,13 +1461,13 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
         <div class="dif-item"><div class="dif-ic">✓</div><div><strong>ART e Respaldo Legal</strong><span>Laudos e inspeções com Anotação de Responsabilidade Técnica no CREA-PR.</span></div></div>
         <div class="dif-item"><div class="dif-ic">✓</div><div><strong>Treinamento In Company</strong><span>Levamos toda a estrutura até a sua empresa, sem parar a produção.</span></div></div>
         <div class="dif-item"><div class="dif-ic">✓</div><div><strong>Atendimento Ágil</strong><span>Resposta rápida e proposta personalizada para cada cliente.</span></div></div>
-        <div class="dif-item"><div class="dif-ic">✓</div><div><strong>Nota 5,0 no Google</strong><span>93 avaliações de clientes satisfeitos com nossos serviços.</span></div></div>
+        <div class="dif-item"><div class="dif-ic">✓</div><div><strong>Nota 5,0 no Google</strong><span>112 avaliações de clientes satisfeitos com nossos serviços.</span></div></div>
         <div class="dif-item"><div class="dif-ic">✓</div><div><strong>Cobertura Regional</strong><span>Ponta Grossa, Campos Gerais e todo o Paraná.</span></div></div>
       </div>
     </div>
   </div>
   <div class="cta">
-    <div class="cta-bg-img"><img src="img09.jpg" alt="Background segurança digital" loading="lazy"></div>
+    <div class="cta-bg-img"><img src="img-cta-nova.jpg" style="object-position:center 28%" alt="Background segurança digital" loading="lazy"></div>
     <div class="cta-overlay"></div>
     <div class="cta-inner">
       <div class="cta-badge">Nossa Equipe</div>
@@ -1447,7 +1484,7 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
 <!-- ══════════════════ CONTATO ══════════════════ -->
 <div id="pg-contato" class="page">
   <div class="page-banner">
-    <div class="pb-bg-url" style="background:url('img28.jpg') center/cover no-repeat"></div>
+    <div class="pb-bg-url" style="background:url('hero-contato-otimizada.webp') center/cover no-repeat"></div>
     <div class="pb-ov"></div>
     <div class="pb-cnt">
       <div class="pg-eye">Fale Conosco</div>
@@ -1491,10 +1528,9 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
 <!-- ══════════════════ BLOG ══════════════════ -->
 <div id="pg-blog" class="page">
   <div class="page-banner">
-    <div class="pb-bg-url" style="background:linear-gradient(135deg,#072e1a,#0B4D2A) center/cover no-repeat"></div>
+    <div class="pb-bg-url" style="background:url('hero-blog.jpg') center/cover no-repeat"></div>
     <div class="pb-ov"></div>
     <div class="pb-cnt">
-      <div class="pg-eye">Conteúdo Técnico</div>
       <h1 class="pg-title">BLOG DE SEGURANÇA DO TRABALHO</h1>
       <p class="pg-sub">Artigos, guias e novidades sobre Normas Regulamentadoras, treinamentos e prevenção de acidentes.</p>
     </div>
@@ -1507,54 +1543,54 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
         <p class="sec-sub">Conteúdo especializado para manter sua empresa segura e em conformidade</p>
       </div>
       <div class="blog-grid">
-        <article class="blog-card" onclick="openArticle('nr35-quem-precisa')"><div class="blog-card-img"><img src="img54.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
-          <h3 class="blog-card-title">O que é a NR-35 e quem precisa fazer o treinamento?</h3>
-          <p class="blog-card-excerpt">A NR-35 regulamenta o trabalho em altura no Brasil. Saiba quem precisa do treinamento e por que ele é obrigatório.</p>
+        <article class="blog-card" onclick="openArticle('nr35-quem-precisa')"><div class="blog-card-img"><img src="https://www.protecworktreinamentos.com.br/img54.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
+          <h3 class="blog-card-title">Onde fazer treinamento NR-35 em Ponta Grossa? Opções e cuidados</h3>
+          <p class="blog-card-excerpt">Veja como encontrar treinamento NR-35 em Ponta Grossa e o que conferir antes de contratar.</p>
           <div class="blog-card-link">Ler artigo →</div></div>
         </article>
-        <article class="blog-card" onclick="openArticle('riscos-trabalho-altura')"><div class="blog-card-img"><img src="img55.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
-          <h3 class="blog-card-title">Principais riscos do trabalho em altura</h3>
-          <p class="blog-card-excerpt">Quedas, falhas de ancoragem e uso incorreto de EPIs estão entre os maiores riscos. Veja como se proteger.</p>
+        <article class="blog-card" onclick="openArticle('riscos-trabalho-altura')"><div class="blog-card-img"><img src="https://www.protecworktreinamentos.com.br/img55.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
+          <h3 class="blog-card-title">Curso NR-35: qual a carga horária e validade? Entenda a regra</h3>
+          <p class="blog-card-excerpt">Entenda a carga horária, a periodicidade e os requisitos que vão além do certificado.</p>
           <div class="blog-card-link">Ler artigo →</div></div>
         </article>
-        <article class="blog-card" onclick="openArticle('acidentes-espaco-confinado')"><div class="blog-card-img"><img src="img56.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
-          <h3 class="blog-card-title">Como evitar acidentes em espaços confinados</h3>
-          <p class="blog-card-excerpt">Espaços confinados exigem cuidados especiais. Conheça as medidas que salvam vidas.</p>
+        <article class="blog-card" onclick="openArticle('acidentes-espaco-confinado')"><div class="blog-card-img"><img src="https://www.protecworktreinamentos.com.br/img56.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
+          <h3 class="blog-card-title">Linha de vida precisa de laudo e ART para atender à NR-35?</h3>
+          <p class="blog-card-excerpt">Saiba quando projeto, inspeção, laudo e responsabilidade técnica entram na avaliação da linha de vida.</p>
           <div class="blog-card-link">Ler artigo →</div></div>
         </article>
-        <article class="blog-card" onclick="openArticle('nr33-atualizada')"><div class="blog-card-img"><img src="img57.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
-          <h3 class="blog-card-title">NR-33 atualizada: o que mudou?</h3>
-          <p class="blog-card-excerpt">A NR-33 passou por revisões importantes. Entenda o que mudou e como manter a conformidade.</p>
+        <article class="blog-card" onclick="openArticle('nr33-atualizada')"><div class="blog-card-img"><img src="https://www.protecworktreinamentos.com.br/img57.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
+          <h3 class="blog-card-title">Com que frequência a linha de vida deve ser inspecionada?</h3>
+          <p class="blog-card-excerpt">Entenda a diferença entre inspeção antes do uso, inspeção inicial e inspeção periódica.</p>
           <div class="blog-card-link">Ler artigo →</div></div>
         </article>
-        <article class="blog-card" onclick="openArticle('importancia-capacitacao')"><div class="blog-card-img"><img src="img58.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
-          <h3 class="blog-card-title">A importância da capacitação em segurança do trabalho</h3>
-          <p class="blog-card-excerpt">Capacitar é proteger vidas e o futuro da empresa. Veja os benefícios reais.</p>
+        <article class="blog-card" onclick="openArticle('importancia-capacitacao')"><div class="blog-card-img"><img src="https://www.protecworktreinamentos.com.br/img58.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
+          <h3 class="blog-card-title">Quem pode projetar ou assinar o laudo de uma linha de vida?</h3>
+          <p class="blog-card-excerpt">Veja a diferença entre trabalhador capacitado, profissional habilitado, projeto, laudo e ART.</p>
           <div class="blog-card-link">Ler artigo →</div></div>
         </article>
-        <article class="blog-card" onclick="openArticle('como-funciona-linha-de-vida')"><div class="blog-card-img"><img src="img59.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
-          <h3 class="blog-card-title">Como funciona uma linha de vida?</h3>
-          <p class="blog-card-excerpt">Linha de vida é um sistema que salva vidas no trabalho em altura. Saiba como funciona.</p>
+        <article class="blog-card" onclick="openArticle('como-funciona-linha-de-vida')"><div class="blog-card-img"><img src="https://www.protecworktreinamentos.com.br/img59.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
+          <h3 class="blog-card-title">PGR, PCMSO e LTCAT: diferenças e documentos que a empresa precisa</h3>
+          <p class="blog-card-excerpt">Entenda a função de cada documento e como eles se relacionam com PPP e eSocial.</p>
           <div class="blog-card-link">Ler artigo →</div></div>
         </article>
-        <article class="blog-card" onclick="openArticle('responsabilidades-empregador')"><div class="blog-card-img"><img src="img60.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
-          <h3 class="blog-card-title">Responsabilidades do empregador na segurança do trabalho</h3>
-          <p class="blog-card-excerpt">A lei define deveres claros para o empregador. Saiba quais são e como cumpri-los.</p>
+        <article class="blog-card" onclick="openArticle('responsabilidades-empregador')"><div class="blog-card-img"><img src="https://www.protecworktreinamentos.com.br/img60.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
+          <h3 class="blog-card-title">PGR no Paraná: é obrigatório? Quem pode elaborar e quais são as exceções</h3>
+          <p class="blog-card-excerpt">Entenda a regra geral do PGR, as exceções e por que a responsabilidade continua sendo da empresa.</p>
           <div class="blog-card-link">Ler artigo →</div></div>
         </article>
-        <article class="blog-card" onclick="openArticle('treinamentos-obrigatorios-empresas')"><div class="blog-card-img"><img src="img61.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
-          <h3 class="blog-card-title">Treinamentos obrigatórios para empresas</h3>
-          <p class="blog-card-excerpt">Sua empresa está em dia com os treinamentos obrigatórios? Confira a lista completa.</p>
+        <article class="blog-card" onclick="openArticle('treinamentos-obrigatorios-empresas')"><div class="blog-card-img"><img src="https://www.protecworktreinamentos.com.br/img61.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
+          <h3 class="blog-card-title">Quais treinamentos de NR sua empresa precisa fazer? Guia no Paraná</h3>
+          <p class="blog-card-excerpt">A lista depende dos riscos e das atividades. Veja como montar uma matriz de treinamentos por função.</p>
           <div class="blog-card-link">Ler artigo →</div></div>
         </article>
-        <article class="blog-card" onclick="openArticle('como-reduzir-acidentes')"><div class="blog-card-img"><img src="img60.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
-          <h3 class="blog-card-title">Como reduzir acidentes no ambiente de trabalho</h3>
-          <p class="blog-card-excerpt">Reduzir acidentes é possível com as estratégias certas. Veja como aplicá-las.</p>
+        <article class="blog-card" onclick="openArticle('como-reduzir-acidentes')"><div class="blog-card-img"><img src="https://www.protecworktreinamentos.com.br/img60.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
+          <h3 class="blog-card-title">NR-35 acima de 2 metros: exige análise de risco e autorização?</h3>
+          <p class="blog-card-excerpt">Entenda quando a NR-35 se aplica e a diferença entre análise de risco, autorização e Permissão de Trabalho.</p>
           <div class="blog-card-link">Ler artigo →</div></div>
         </article>
-        <article class="blog-card" onclick="openArticle('checklist-seguranca')"><div class="blog-card-img"><img src="img62.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
-          <h3 class="blog-card-title">Checklist de segurança para atividades de risco</h3>
-          <p class="blog-card-excerpt">Um bom checklist evita acidentes. Veja os itens essenciais para atividades de risco.</p>
+        <article class="blog-card" onclick="openArticle('checklist-seguranca')"><div class="blog-card-img"><img src="https://www.protecworktreinamentos.com.br/img62.jpg" alt="" loading="lazy"></div><div class="blog-card-body"><div class="blog-card-tag">Artigo</div>
+          <h3 class="blog-card-title">Quanto custa segurança do trabalho e treinamento NR em Ponta Grossa?</h3>
+          <p class="blog-card-excerpt">Saiba por que não existe preço único e como comparar propostas de treinamentos, laudos e consultoria.</p>
           <div class="blog-card-link">Ler artigo →</div></div>
         </article>
       </div>
@@ -1566,12 +1602,9 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
       <div class="blog-article-inner">
         <a class="blog-back" onclick="nav('blog')">← Voltar ao Blog</a>
         <div class="sec-label">Blog Protecwork</div>
-        <h1 class="blog-art-title">O que é a NR-35 e quem precisa fazer o treinamento?</h1>
-        <div class="blog-art-hero"><img src="img54.jpg" alt="" loading="lazy"></div>
-        <div class="blog-art-body"><h2>O que é a NR-35?</h2><p>A Norma Regulamentadora 35 estabelece os requisitos mínimos de proteção para o trabalho em altura, considerado toda atividade executada acima de 2 metros do nível inferior, onde haja risco de queda.</p>
-<h2>Quem precisa fazer o treinamento?</h2><p>Todo trabalhador que executa atividades em altura — manutenção, construção civil, limpeza de fachadas, telhados, torres e estruturas industriais — deve ser capacitado conforme a norma.</p>
-<h3>Carga horária e validade</h3><p>O treinamento básico tem carga horária mínima de 8 horas, com reciclagem periódica. A validade do certificado é de 2 anos.</p>
-<h2>Responsabilidades da empresa</h2><p>Cabe ao empregador garantir a capacitação, fornecer EPIs adequados, realizar a Análise de Risco e implementar medidas de proteção coletiva e individual.</p></div>
+        <h1 class="blog-art-title">Onde fazer treinamento NR-35 em Ponta Grossa? Opções e cuidados</h1>
+        <div class="blog-art-hero"><img src="https://www.protecworktreinamentos.com.br/img54.jpg" alt="" loading="lazy"></div>
+        <div class="blog-art-body"><h2>Resposta direta</h2><p>Em Ponta Grossa, é possível encontrar turmas presenciais, capacitações in company e cursos de aperfeiçoamento relacionados ao trabalho em altura. Antes de escolher, confirme a turma, a modalidade, a carga horária, a parte prática, o instrutor e a documentação fornecida.</p><h2>O que o treinamento deve abordar?</h2><p>O treinamento inicial da NR-35 deve ocorrer antes do início da atividade e ter conteúdo teórico e prático conforme a redação vigente da norma. O treinamento periódico também deve ser conferido de acordo com a periodicidade prevista na NR-35 e com a situação do trabalhador.</p><h2>Checklist antes da contratação</h2><p>Peça a ementa do curso, confirme se a modalidade atende à regra vigente, verifique a experiência do instrutor, pergunte como será a prática com equipamentos e sistemas de proteção contra quedas e confira como serão emitidos e arquivados os certificados.</p><p>Também é importante diferenciar o treinamento básico de cursos de resgate, supervisão ou outras capacitações específicas. Um curso de aperfeiçoamento não substitui automaticamente todos os requisitos da NR-35.</p><h2>Fontes oficiais e atualização</h2><p>Consulte a <a href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/norma-regulamentadora-no-35-nr-35" target="_blank">NR-35 no Ministério do Trabalho e Emprego</a> e confirme a regra vigente na data da matrícula. Normas, portarias e exigências de modalidade podem mudar.</p></div>
         <div class="blog-cta">
           <h3>Precisa de treinamento ou consultoria em Segurança do Trabalho?</h3>
           <p>A Protecwork Treinamentos atende empresas em Ponta Grossa e região. Fale com um especialista agora.</p>
@@ -1588,11 +1621,9 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
       <div class="blog-article-inner">
         <a class="blog-back" onclick="nav('blog')">← Voltar ao Blog</a>
         <div class="sec-label">Blog Protecwork</div>
-        <h1 class="blog-art-title">Principais riscos do trabalho em altura</h1>
-        <div class="blog-art-hero"><img src="img55.jpg" alt="" loading="lazy"></div>
-        <div class="blog-art-body"><h2>Os riscos mais comuns</h2><p>O trabalho em altura é uma das atividades de maior risco no ambiente ocupacional. As quedas estão entre as principais causas de acidentes graves e fatais no Brasil.</p>
-<h3>Principais fatores de risco</h3><p>Falta de ancoragem adequada, uso incorreto de cinto e talabarte, ausência de linha de vida, condições climáticas adversas e falta de capacitação são os fatores mais recorrentes.</p>
-<h2>Como prevenir</h2><p>A prevenção passa pela capacitação NR-35, inspeção regular de equipamentos, uso correto de EPIs e implementação de sistemas de proteção contra quedas, como linhas de vida certificadas.</p></div>
+        <h1 class="blog-art-title">Curso NR-35: qual a carga horária e validade? Entenda a regra</h1>
+        <div class="blog-art-hero"><img src="https://www.protecworktreinamentos.com.br/img55.jpg" alt="" loading="lazy"></div>
+        <div class="blog-art-body"><h2>Resposta direta</h2><p>A NR-35 prevê treinamento inicial e treinamento periódico. A regra vigente deve ser consultada no texto oficial do Ministério do Trabalho e Emprego, porque portarias podem alterar modalidade, transição e requisitos.</p><h2>Periodicidade não é uma licença isolada</h2><p>Muitas pessoas perguntam qual é a “validade” do curso. A forma mais segura de explicar é que a norma estabelece quando o treinamento periódico deve ser repetido. A autorização para trabalho em altura também depende de capacitação compatível, aptidão clínica e autorização formal da organização.</p><h2>O que conferir no certificado?</h2><p>Confira nome do trabalhador, data, carga horária, conteúdo, modalidade, identificação dos instrutores e responsável pelo treinamento. Guarde listas, avaliações e demais registros exigidos pela organização e pela norma.</p><h2>Curso on-line é sempre aceito?</h2><p>Não faça essa promessa sem verificar a regra vigente. A modalidade de treinamentos de trabalho em altura pode ser atualizada por portaria. Antes de contratar, confirme no MTE e com o fornecedor se a modalidade oferecida atende à exigência aplicável na data.</p><p>Leia a <a href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/norma-regulamentadora-no-35-nr-35" target="_blank">página oficial da NR-35</a> antes de publicar ou aplicar qualquer orientação.</p></div>
         <div class="blog-cta">
           <h3>Precisa de treinamento ou consultoria em Segurança do Trabalho?</h3>
           <p>A Protecwork Treinamentos atende empresas em Ponta Grossa e região. Fale com um especialista agora.</p>
@@ -1609,11 +1640,9 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
       <div class="blog-article-inner">
         <a class="blog-back" onclick="nav('blog')">← Voltar ao Blog</a>
         <div class="sec-label">Blog Protecwork</div>
-        <h1 class="blog-art-title">Como evitar acidentes em espaços confinados</h1>
-        <div class="blog-art-hero"><img src="img56.jpg" alt="" loading="lazy"></div>
-        <div class="blog-art-body"><h2>O que é um espaço confinado?</h2><p>É qualquer área não projetada para ocupação humana contínua, com meios limitados de entrada e saída e ventilação insuficiente — tanques, silos, galerias, dutos e poços.</p>
-<h2>Principais perigos</h2><p>Atmosferas com deficiência de oxigênio, gases tóxicos ou inflamáveis, e risco de soterramento são as ameaças mais frequentes.</p>
-<h3>Medidas de prevenção</h3><p>Monitoramento contínuo de gases, ventilação forçada, permissão de entrada e trabalho (PET), equipe de vigia e plano de resgate são obrigatórios conforme a NR-33.</p></div>
+        <h1 class="blog-art-title">Linha de vida precisa de laudo e ART para atender à NR-35?</h1>
+        <div class="blog-art-hero"><img src="https://www.protecworktreinamentos.com.br/img56.jpg" alt="" loading="lazy"></div>
+        <div class="blog-art-body"><h2>Resposta direta</h2><p>Não existe uma regra geral que exija automaticamente um documento chamado “laudo” e uma ART para toda linha de vida. A NR-35 exige sistema de proteção contra quedas adequado, compatível, inspecionado e com registros. Quando houver projeto, dimensionamento, instalação ou outro serviço de engenharia, a responsabilidade técnica deve ser avaliada por profissional habilitado.</p><h2>Linha de vida permanente e temporária</h2><p>Uma linha de vida permanente integra um sistema de ancoragem permanente e deve ser projetada e instalada sob responsabilidade compatível com o serviço. Sistemas temporários dependem de procedimento, definição dos pontos de fixação, compatibilidade e análise das condições reais de uso.</p><h2>Quando o laudo pode ser necessário?</h2><p>Um laudo ou relatório técnico pode documentar inspeção, ensaio, adequação, alteração, resistência, condições de uso ou exigência contratual. Ele não deve ser confundido com o simples registro de inspeção. O escopo precisa corresponder ao serviço efetivamente realizado.</p><h2>E a ART?</h2><p>Quando o trabalho se enquadrar como serviço de engenharia, a ART deve ser analisada e registrada conforme a legislação profissional. A responsabilidade não é transferida apenas pela compra de um certificado ou por um treinamento de NR-35.</p><p>Consulte a <a href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/norma-regulamentadora-no-35-nr-35" target="_blank">NR-35 no MTE</a> e procure profissional legalmente habilitado para avaliar o caso concreto.</p></div>
         <div class="blog-cta">
           <h3>Precisa de treinamento ou consultoria em Segurança do Trabalho?</h3>
           <p>A Protecwork Treinamentos atende empresas em Ponta Grossa e região. Fale com um especialista agora.</p>
@@ -1630,11 +1659,9 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
       <div class="blog-article-inner">
         <a class="blog-back" onclick="nav('blog')">← Voltar ao Blog</a>
         <div class="sec-label">Blog Protecwork</div>
-        <h1 class="blog-art-title">NR-33 atualizada: o que mudou?</h1>
-        <div class="blog-art-hero"><img src="img57.jpg" alt="" loading="lazy"></div>
-        <div class="blog-art-body"><h2>Contexto da norma</h2><p>A NR-33 trata da segurança e saúde nos trabalhos em espaços confinados, definindo responsabilidades e procedimentos obrigatórios.</p>
-<h2>Principais pontos de atenção</h2><p>As revisões reforçaram a importância da capacitação de Vigias, Trabalhadores Autorizados e Supervisores de Entrada, além da gestão de riscos e dos procedimentos de emergência.</p>
-<h3>Como adequar a empresa</h3><p>Revise os procedimentos internos, atualize as capacitações da equipe e mantenha a documentação técnica em dia para evitar autuações e proteger os trabalhadores.</p></div>
+        <h1 class="blog-art-title">Com que frequência a linha de vida deve ser inspecionada?</h1>
+        <div class="blog-art-hero"><img src="https://www.protecworktreinamentos.com.br/img57.jpg" alt="" loading="lazy"></div>
+        <div class="blog-art-body"><h2>Resposta direta</h2><p>A linha de vida deve ser verificada antes do início do trabalho e passar por inspeções conforme o tipo de sistema, o projeto, o fabricante, a análise de risco e a redação vigente da NR-35. Para o SPIQ, a inspeção periódica deve respeitar o intervalo máximo previsto na norma, sem substituir a verificação rotineira antes do uso.</p><h2>Três momentos de inspeção</h2><p>A inspeção inicial ocorre antes da primeira utilização e também pode ser necessária após instalação, alteração ou mudança de local. A inspeção rotineira deve ocorrer antes do início dos trabalhos. A inspeção periódica deve ser registrada e pode precisar de intervalo menor quando houver uso intenso ou exposição a agentes agressivos.</p><h2>Quando retirar o sistema de uso?</h2><p>Componentes com defeitos, degradação, deformações ou que tenham sofrido impacto de queda devem ser retirados de uso até avaliação adequada. A decisão deve considerar o fabricante, o projeto, a análise de risco e as normas aplicáveis.</p><h2>Registre tudo</h2><p>Mantenha registros das inspeções, das correções realizadas e das condições encontradas. A documentação ajuda a demonstrar rastreabilidade e facilita a decisão técnica sobre manutenção, substituição ou liberação do sistema.</p><p>Confira a <a href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/norma-regulamentadora-no-35-nr-35" target="_blank">versão vigente da NR-35</a> antes de definir o intervalo de inspeção.</p></div>
         <div class="blog-cta">
           <h3>Precisa de treinamento ou consultoria em Segurança do Trabalho?</h3>
           <p>A Protecwork Treinamentos atende empresas em Ponta Grossa e região. Fale com um especialista agora.</p>
@@ -1651,11 +1678,9 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
       <div class="blog-article-inner">
         <a class="blog-back" onclick="nav('blog')">← Voltar ao Blog</a>
         <div class="sec-label">Blog Protecwork</div>
-        <h1 class="blog-art-title">A importância da capacitação em segurança do trabalho</h1>
-        <div class="blog-art-hero"><img src="img58.jpg" alt="" loading="lazy"></div>
-        <div class="blog-art-body"><h2>Por que capacitar?</h2><p>A capacitação é o pilar central da prevenção de acidentes. Trabalhadores treinados reconhecem riscos, adotam comportamentos seguros e respondem corretamente a emergências.</p>
-<h2>Benefícios para a empresa</h2><p>Redução de acidentes e afastamentos, diminuição de custos com indenizações, conformidade legal e melhoria da produtividade e do clima organizacional.</p>
-<h3>Investimento, não custo</h3><p>Cada real investido em segurança retorna em produtividade, reputação e, acima de tudo, na proteção da vida dos colaboradores.</p></div>
+        <h1 class="blog-art-title">Quem pode projetar ou assinar o laudo de uma linha de vida?</h1>
+        <div class="blog-art-hero"><img src="https://www.protecworktreinamentos.com.br/img58.jpg" alt="" loading="lazy"></div>
+        <div class="blog-art-body"><h2>Resposta direta</h2><p>O projeto ou laudo deve ser elaborado e assinado por profissional legalmente habilitado, com registro ativo e atribuição compatível com o serviço. Fazer um curso de NR-35 não autoriza, por si só, projetar uma linha de vida ou emitir laudo técnico.</p><h2>O que deve ser analisado?</h2><p>O responsável técnico deve avaliar a estrutura, os pontos de ancoragem, as fixações, os componentes, a resistência, a compatibilidade, as restrições de uso, as condições ambientais e a necessidade de inspeções. O documento precisa refletir o serviço realizado e apresentar conclusão técnica rastreável.</p><h2>Quando entra a ART?</h2><p>Se houver obra ou serviço de engenharia, a ART deve ser analisada conforme a legislação profissional. Ela identifica o responsável técnico e deve ser registrada no momento adequado. Confirme a atribuição e o escopo no conselho profissional competente, como o Crea-PR quando aplicável.</p><h2>Não confunda capacitação com habilitação</h2><p>O trabalhador capacitado pode executar atividades conforme procedimento e projeto. Isso é diferente da responsabilidade de dimensionar, projetar, inspecionar tecnicamente ou assinar um laudo.</p><p>Use a <a href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/norma-regulamentadora-no-35-nr-35" target="_blank">NR-35 oficial</a> como referência e solicite registro profissional, escopo, projeto e responsabilidade técnica antes de contratar.</p></div>
         <div class="blog-cta">
           <h3>Precisa de treinamento ou consultoria em Segurança do Trabalho?</h3>
           <p>A Protecwork Treinamentos atende empresas em Ponta Grossa e região. Fale com um especialista agora.</p>
@@ -1672,11 +1697,9 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
       <div class="blog-article-inner">
         <a class="blog-back" onclick="nav('blog')">← Voltar ao Blog</a>
         <div class="sec-label">Blog Protecwork</div>
-        <h1 class="blog-art-title">Como funciona uma linha de vida?</h1>
-        <div class="blog-art-hero"><img src="img59.jpg" alt="" loading="lazy"></div>
-        <div class="blog-art-body"><h2>O que é uma linha de vida?</h2><p>É um sistema de ancoragem — horizontal ou vertical — que permite a movimentação segura do trabalhador em altura, conectando o cinto de segurança a um ponto resistente.</p>
-<h2>Tipos de sistema</h2><p>Linhas de vida horizontais (cabos de aço ou trilhos) e verticais (escadas e torres) são dimensionadas conforme a estrutura e o número de usuários.</p>
-<h3>Inspeção obrigatória</h3><p>Todo sistema deve passar por inspeção técnica periódica, com emissão de laudo e ART por engenheiro habilitado, garantindo que suporta as cargas previstas em norma.</p></div>
+        <h1 class="blog-art-title">PGR, PCMSO e LTCAT: diferenças e documentos que a empresa precisa</h1>
+        <div class="blog-art-hero"><img src="https://www.protecworktreinamentos.com.br/img59.jpg" alt="" loading="lazy"></div>
+        <div class="blog-art-body"><h2>Resposta direta</h2><p>PGR, PCMSO e LTCAT não são a mesma coisa. O PGR gerencia perigos e riscos ocupacionais. O PCMSO acompanha a saúde dos empregados com base nos riscos identificados. O LTCAT é um laudo técnico de finalidade previdenciária, ligado à avaliação de exposição a agentes nocivos.</p><h2>O que é o PGR?</h2><p>O PGR materializa o Gerenciamento de Riscos Ocupacionais e deve conter, no mínimo, inventário de riscos ocupacionais e plano de ação, observadas as exceções da NR-1. Ele deve acompanhar mudanças no ambiente, nos processos e nos riscos.</p><h2>O que é o PCMSO?</h2><p>O PCMSO organiza o acompanhamento médico ocupacional e deve considerar os riscos identificados no gerenciamento. Ele não substitui o PGR e não deve ser elaborado de forma desconectada da realidade do estabelecimento.</p><h2>O que é o LTCAT?</h2><p>O LTCAT apoia a análise previdenciária da exposição a agentes nocivos. Ele não é um PGR com outro nome e não substitui o PPP. As informações de SST também precisam ser coerentes com os registros aplicáveis do eSocial.</p><h2>Qual documento a empresa precisa?</h2><p>A resposta depende da atividade, dos empregados, dos riscos, do enquadramento e das exceções normativas. Uma avaliação profissional deve verificar PGR, PCMSO, LTCAT, PPP, eSocial e demais documentos aplicáveis.</p><p>Consulte as páginas oficiais do <a href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/pgr" target="_blank">PGR no MTE</a> e do <a href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/nr-07-atualizada-2022-1.pdf" target="_blank">PCMSO na NR-7</a>.</p></div>
         <div class="blog-cta">
           <h3>Precisa de treinamento ou consultoria em Segurança do Trabalho?</h3>
           <p>A Protecwork Treinamentos atende empresas em Ponta Grossa e região. Fale com um especialista agora.</p>
@@ -1693,11 +1716,9 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
       <div class="blog-article-inner">
         <a class="blog-back" onclick="nav('blog')">← Voltar ao Blog</a>
         <div class="sec-label">Blog Protecwork</div>
-        <h1 class="blog-art-title">Responsabilidades do empregador na segurança do trabalho</h1>
-        <div class="blog-art-hero"><img src="img60.jpg" alt="" loading="lazy"></div>
-        <div class="blog-art-body"><h2>O que diz a legislação</h2><p>A CLT e as Normas Regulamentadoras estabelecem que o empregador é responsável por garantir um ambiente de trabalho seguro e saudável.</p>
-<h2>Principais obrigações</h2><p>Fornecer EPIs gratuitamente, capacitar os trabalhadores, elaborar documentos como PGR e LTCAT, sinalizar riscos e manter a CIPA ativa quando exigido.</p>
-<h3>Consequências do descumprimento</h3><p>O não cumprimento gera multas, interdições, ações trabalhistas e responsabilização civil e criminal em caso de acidentes.</p></div>
+        <h1 class="blog-art-title">PGR no Paraná: é obrigatório? Quem pode elaborar e quais são as exceções</h1>
+        <div class="blog-art-hero"><img src="https://www.protecworktreinamentos.com.br/img60.jpg" alt="" loading="lazy"></div>
+        <div class="blog-art-body"><h2>Resposta direta</h2><p>Em regra, o PGR deve ser providenciado por empregadores que mantenham trabalhadores sob a CLT, inclusive no Paraná. A obrigação decorre de norma federal e deve ser analisada junto com as exceções da NR-1 e com as regras específicas da atividade.</p><h2>O que o PGR precisa conter?</h2><p>O programa deve materializar o gerenciamento dos riscos ocupacionais e conter, no mínimo, inventário de riscos ocupacionais e plano de ação. Também precisa refletir mudanças nos processos, no ambiente, nas funções e nas medidas de prevenção.</p><h2>Quem pode elaborar?</h2><p>A NR-1 não cria uma profissão única para todos os PGRs. A organização continua responsável por implementar e manter o programa e deve designar pessoa ou equipe com conhecimento compatível com a natureza e a complexidade dos riscos. Em situações específicas, como construção civil, a NR-18 traz requisitos próprios.</p><h2>Existem exceções?</h2><p>MEI, ME e EPP podem estar sujeitos a condições e dispensas específicas, mas a dispensa de elaborar o PGR não elimina automaticamente as demais obrigações de segurança e saúde no trabalho. A análise deve considerar enquadramento e requisitos cumulativos.</p><p>Leia o <a href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/pgr" target="_blank">guia oficial do PGR no MTE</a> e valide o caso da empresa com profissional competente.</p></div>
         <div class="blog-cta">
           <h3>Precisa de treinamento ou consultoria em Segurança do Trabalho?</h3>
           <p>A Protecwork Treinamentos atende empresas em Ponta Grossa e região. Fale com um especialista agora.</p>
@@ -1714,11 +1735,9 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
       <div class="blog-article-inner">
         <a class="blog-back" onclick="nav('blog')">← Voltar ao Blog</a>
         <div class="sec-label">Blog Protecwork</div>
-        <h1 class="blog-art-title">Treinamentos obrigatórios para empresas</h1>
-        <div class="blog-art-hero"><img src="img61.jpg" alt="" loading="lazy"></div>
-        <div class="blog-art-body"><h2>Quais treinamentos são obrigatórios?</h2><p>Depende da atividade da empresa, mas os mais comuns incluem NR-35 (altura), NR-33 (espaço confinado), NR-10 (eletricidade), NR-11 (empilhadeiras) e NR-6 (EPI).</p>
-<h2>Treinamentos por setor</h2><p>Indústrias geralmente exigem NR-12, NR-13 e NR-20; construção civil exige NR-18; e praticamente todas precisam de Brigada de Incêndio e Primeiros Socorros.</p>
-<h3>Como organizar</h3><p>Faça um levantamento das atividades de risco, identifique as NRs aplicáveis e mantenha um cronograma de capacitação e reciclagem atualizado.</p></div>
+        <h1 class="blog-art-title">Quais treinamentos de NR sua empresa precisa fazer? Guia no Paraná</h1>
+        <div class="blog-art-hero"><img src="https://www.protecworktreinamentos.com.br/img61.jpg" alt="" loading="lazy"></div>
+        <div class="blog-art-body"><h2>Resposta direta</h2><p>Não existe um pacote único de treinamentos de NR para todas as empresas. A necessidade depende dos perigos, riscos, funções, equipamentos, processos, setor e normas específicas aplicáveis ao estabelecimento.</p><h2>Como descobrir os treinamentos?</h2><p>Comece pelo inventário de riscos e pelo plano de ação do PGR. Depois, identifique quem trabalha com eletricidade, máquinas, altura, espaços confinados, inflamáveis, movimentação de cargas, obras, agentes químicos ou outras situações reguladas.</p><h2>Exemplos de NRs que podem se aplicar</h2><p>Dependendo da atividade, podem existir exigências relacionadas à NR-5, NR-6, NR-10, NR-11, NR-12, NR-18, NR-20, NR-33 e NR-35, além de normas setoriais. A NR-35, por exemplo, trata de trabalho em altura; a NR-33 trata de espaços confinados; e a NR-10 trata de instalações e serviços com eletricidade.</p><h2>Documente a capacitação</h2><p>Registre trabalhador, conteúdo, carga horária, data, local, instrutor, responsável, avaliação e certificado. Treinamentos iniciais, periódicos e eventuais devem seguir a NR-1 e a norma específica. A empresa também deve verificar autorização, aptidão e reciclagens quando aplicáveis.</p><p>Consulte a <a href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/seguranca-e-saude-no-trabalho/ctpp-nrs/normas-regulamentadoras-nrs" target="_blank">lista oficial de NRs</a> e monte a matriz com apoio técnico.</p></div>
         <div class="blog-cta">
           <h3>Precisa de treinamento ou consultoria em Segurança do Trabalho?</h3>
           <p>A Protecwork Treinamentos atende empresas em Ponta Grossa e região. Fale com um especialista agora.</p>
@@ -1735,11 +1754,9 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
       <div class="blog-article-inner">
         <a class="blog-back" onclick="nav('blog')">← Voltar ao Blog</a>
         <div class="sec-label">Blog Protecwork</div>
-        <h1 class="blog-art-title">Como reduzir acidentes no ambiente de trabalho</h1>
-        <div class="blog-art-hero"><img src="img60.jpg" alt="" loading="lazy"></div>
-        <div class="blog-art-body"><h2>Cultura de segurança</h2><p>A redução de acidentes começa com uma cultura organizacional que valoriza a segurança em todos os níveis, da liderança ao chão de fábrica.</p>
-<h2>Ações práticas</h2><p>Treinamento contínuo, diálogos diários de segurança (DDS), inspeções regulares, mapeamento de riscos e uso correto de EPIs são medidas comprovadamente eficazes.</p>
-<h3>Monitoramento</h3><p>Indicadores como taxa de frequência e gravidade ajudam a medir resultados e direcionar melhorias contínuas.</p></div>
+        <h1 class="blog-art-title">NR-35 acima de 2 metros: exige análise de risco e autorização?</h1>
+        <div class="blog-art-hero"><img src="https://www.protecworktreinamentos.com.br/img60.jpg" alt="" loading="lazy"></div>
+        <div class="blog-art-body"><h2>Resposta direta</h2><p>A NR-35 se aplica ao trabalho realizado acima de 2 metros do nível inferior quando houver risco de queda. Nesse cenário, a atividade deve ser planejada e executada com as medidas de prevenção previstas na norma.</p><h2>A análise de risco é obrigatória?</h2><p>Todo trabalho em altura abrangido deve ser precedido de análise de risco. Ela deve considerar local e entorno, ancoragem, condições meteorológicas, sistemas de proteção, queda de materiais, riscos adicionais, condições impeditivas, emergência, resgate, comunicação e supervisão.</p><h2>O trabalhador precisa de autorização?</h2><p>Sim. O trabalhador deve ser formalmente autorizado pela organização. A autorização deve considerar capacitação e aptidão clínica. Ter feito um curso, isoladamente, não substitui a autorização nem a avaliação das condições reais da tarefa.</p><h2>E a Permissão de Trabalho?</h2><p>A PT não é automaticamente necessária para toda atividade rotineira. Para atividade não rotineira, a autorização prévia deve ocorrer por meio de PT, com as medidas de prevenção evidenciadas na análise de risco e no documento.</p><p>Consulte a <a href="https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadora/normas-regulamentadoras-vigentes/norma-regulamentadora-no-35-nr-35" target="_blank">NR-35 vigente</a> antes de iniciar qualquer trabalho em altura.</p></div>
         <div class="blog-cta">
           <h3>Precisa de treinamento ou consultoria em Segurança do Trabalho?</h3>
           <p>A Protecwork Treinamentos atende empresas em Ponta Grossa e região. Fale com um especialista agora.</p>
@@ -1756,11 +1773,9 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
       <div class="blog-article-inner">
         <a class="blog-back" onclick="nav('blog')">← Voltar ao Blog</a>
         <div class="sec-label">Blog Protecwork</div>
-        <h1 class="blog-art-title">Checklist de segurança para atividades de risco</h1>
-        <div class="blog-art-hero"><img src="img62.jpg" alt="" loading="lazy"></div>
-        <div class="blog-art-body"><h2>Por que usar um checklist?</h2><p>O checklist padroniza a verificação de segurança antes de iniciar atividades de risco, reduzindo falhas humanas e esquecimentos.</p>
-<h2>Itens essenciais</h2><p>Verifique: capacitação válida da equipe, EPIs em bom estado, análise de risco realizada, equipamentos inspecionados, sinalização da área e plano de emergência definido.</p>
-<h3>Atividades que exigem atenção redobrada</h3><p>Trabalho em altura, espaço confinado, atividades a quente e com energia elétrica exigem checklists específicos e permissão de trabalho documentada.</p></div>
+        <h1 class="blog-art-title">Quanto custa segurança do trabalho e treinamento NR em Ponta Grossa?</h1>
+        <div class="blog-art-hero"><img src="https://www.protecworktreinamentos.com.br/img62.jpg" alt="" loading="lazy"></div>
+        <div class="blog-art-body"><h2>Resposta direta</h2><p>Não existe tabela oficial ou preço único para contratar uma empresa de segurança do trabalho em Ponta Grossa. O valor depende do escopo: treinamento isolado, turma in company, documentos, laudos, visitas técnicas ou assessoria contínua.</p><h2>O que influencia o orçamento?</h2><p>Entre os fatores estão número de trabalhadores, quantidade de unidades, atividade e grau de risco, necessidade de prática, deslocamento, urgência, equipamentos, treinamentos exigidos, PGR, PCMSO, LTCAT, laudos, eSocial e periodicidade do atendimento.</p><h2>Como comparar propostas?</h2><p>Informe o ramo da empresa, número de empregados, atividades, riscos, endereço, unidades, modalidade desejada e documentos necessários. Peça que a proposta detalhe carga horária, conteúdo, prática, certificados, visitas, responsáveis técnicos, extras, prazo e validade do orçamento.</p><h2>O menor preço é sempre melhor?</h2><p>Não. Compare o que está incluído, a qualificação dos instrutores, a rastreabilidade dos documentos e a adequação à NR aplicável. Um curso individual não pode ser comparado diretamente com uma consultoria completa ou com um programa in company.</p><p>Solicite uma cotação personalizada para sua realidade e confira as <a href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/inspecao-do-trabalho/seguranca-e-saude-no-trabalho/ctpp-nrs/normas-regulamentadoras-nrs" target="_blank">obrigações oficiais das NRs</a> antes de decidir.</p></div>
         <div class="blog-cta">
           <h3>Precisa de treinamento ou consultoria em Segurança do Trabalho?</h3>
           <p>A Protecwork Treinamentos atende empresas em Ponta Grossa e região. Fale com um especialista agora.</p>
@@ -1777,7 +1792,7 @@ footer{background:#050505;border-top:1px solid rgba(255,255,255,.05);padding:48p
 <footer>
   <div class="fg-grid">
     <div>
-      <img src="img04.png" alt="Protecwork" style="height:40px">
+      <img src="https://www.protecworktreinamentos.com.br/img04.png" alt="Protecwork" style="height:40px">
       <p class="fd">Segurança do Trabalho, Treinamentos e Engenharia em Ponta Grossa — Paraná. Protegemos vidas e garantimos conformidade legal.</p>
     </div>
     <div class="fc">
@@ -1838,14 +1853,7 @@ function toggleMenu(){
   mo=!mo;
   document.getElementById('mm').style.display=mo?'block':'none';
 }
-// Subtle parallax on hero background
-const heroBg=document.getElementById('heroBg');
-window.addEventListener('mousemove',e=>{
-  if(!heroBg)return;
-  const x=(e.clientX/window.innerWidth-.5)*8;
-  const y=(e.clientY/window.innerHeight-.5)*5;
-  heroBg.style.transform=`scale(1.05) translate(${x}px,${y}px)`;
-});
+// Mantém o fundo estável para uma apresentação mais institucional.
 function submitForm(e){
   e.preventDefault();
   const n=document.getElementById('fn').value,
@@ -1879,11 +1887,247 @@ function submitForm(e){
       });
     }
     addSet(); addSet();
+    track.addEventListener('click',function(e){
+      if(e.target && e.target.tagName==='IMG') track.classList.toggle('is-paused');
+    });
     return true;
   }
   function tryBuild(){ if(build()===false){ setTimeout(tryBuild,300); } }
   if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded',tryBuild); } else { tryBuild(); }
   window.addEventListener('load',tryBuild);
+})();
+</script>
+
+<script>
+/* Entrada lateral dos cards, sem mudar a estrutura HTML */
+(function(){
+  var grid=document.querySelector('.srv-grid');
+  if(!grid)return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){grid.classList.add('cards-ready');return;}
+  if(!('IntersectionObserver' in window)){grid.classList.add('cards-ready');return;}
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){grid.classList.add('cards-ready');io.disconnect();}})},{threshold:.18});
+  io.observe(grid);
+})();
+</script>
+
+
+<script>
+/* Mantém o efeito de escrita do título original */
+(function(){
+  var title=document.querySelector('#pg-home .hero-title');
+  if(!title)return;
+  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lines=[[['EVITE ',false],['MULTAS.',true]],[['PREVINA ',false],['ACIDENTES.',true]],[['GARANTA ',false],['CONFORMIDADE.',true]]];
+  title.classList.add('typewriter-ready');
+  if(reduce){title.classList.remove('typewriter-ready');return;}
+  title.innerHTML=''; title.classList.add('typewriter-live');
+  var line=0,part=0,char=0,currentLine,currentPart;
+  function next(){
+    if(line>=lines.length){var cursor=document.createElement('span');cursor.className='typing-caret';title.appendChild(cursor);return;}
+    if(part===0 && char===0){currentLine=document.createElement('span');currentLine.className='typing-line';title.appendChild(currentLine);currentPart=document.createElement('span');currentPart.className='typing-white';currentLine.appendChild(currentPart);}
+    if(part===1 && char===0){currentPart=document.createElement('span');currentPart.className='green';currentLine.appendChild(currentPart);}
+    var text=lines[line][part][0]; currentPart.textContent+=text[char++];
+    if(char<text.length){setTimeout(next,42);return;}
+    char=0;part++;
+    if(part<2){setTimeout(next,42);return;}
+    part=0;line++;setTimeout(next,125);
+  }
+  next();
+})();
+</script>
+
+
+<script>
+/* Escrita progressiva dos subtítulos das seções */
+(function(){
+  var subtitles=document.querySelectorAll('.hero-sub,.pm-sub,.sec-sub,.sec-sub-dark');
+  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  subtitles.forEach(function(el){
+    var text=el.textContent.replace(/\s+/g,' ').trim();
+    if(!text)return;
+    el.classList.add('typewriter-subtitle','typewriter-ready');
+    if(reduce)return;
+    el.textContent='';
+    el.classList.add('typewriter-live');
+    var content=document.createElement('span');
+    var cursor=document.createElement('span');
+    cursor.className='typing-caret';
+    el.appendChild(content);
+    el.appendChild(cursor);
+    var char=0;
+    function next(){
+      content.textContent=text.slice(0,++char);
+      if(char<text.length)setTimeout(next,28);
+    }
+    next();
+  });
+})();
+</script>
+
+
+<script>
+/* ===== Scan Effect — Laudos de Engenharia (varredura técnica) ===== */
+(function(){
+  var wrap = document.querySelector('#pg-laudos .page-banner');
+  if(!wrap) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var canvas = document.createElement('canvas');
+  canvas.className = 'scan-canvas';
+  var ov = wrap.querySelector('.pb-ov');
+  wrap.insertBefore(canvas, ov);
+  var ctx = canvas.getContext('2d');
+  var dpr = Math.min(window.devicePixelRatio||1, 2);
+  var w=0,h=0,t=0,raf=0;
+  function size(){
+    w = wrap.clientWidth; h = wrap.clientHeight;
+    canvas.width = Math.max(1,w*dpr); canvas.height = Math.max(1,h*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  size();
+  window.addEventListener('resize', size);
+  var pgLaudos = document.getElementById('pg-laudos');
+  function isActive(){ return pgLaudos && pgLaudos.classList.contains('active'); }
+  function draw(){
+    raf = requestAnimationFrame(draw);
+    if(!isActive()){ return; }
+    t += 0.010;
+    ctx.clearRect(0,0,w,h);
+    var progress = (Math.sin(t)+1)/2;
+    var bandY = progress*h;
+    var band = Math.max(40,h*0.16);
+    ctx.globalCompositeOperation = 'lighter';
+    var step = 26;
+    for(var y=0; y<h; y+=step){
+      var dist = Math.abs(y-bandY);
+      if(dist>band) continue;
+      var a = (1 - dist/band); a = a*a*0.55;
+      for(var x=0; x<w; x+=step){
+        ctx.fillStyle = 'rgba(0,210,106,'+a.toFixed(3)+')';
+        ctx.fillRect(x, y, 2, 2);
+      }
+    }
+    var grad = ctx.createLinearGradient(0,bandY-3,0,bandY+3);
+    grad.addColorStop(0,'rgba(0,210,106,0)');
+    grad.addColorStop(.5,'rgba(180,240,180,.55)');
+    grad.addColorStop(1,'rgba(0,210,106,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, bandY-3, w, 6);
+    ctx.globalCompositeOperation = 'source-over';
+  }
+  raf = requestAnimationFrame(draw);
+})();
+
+/* ===== Wax Seal — ART de Engenharia (selo ao rolar) ===== */
+(function(){
+  var seal = document.getElementById('artWaxSeal');
+  if(!seal) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){ seal.classList.add('stamped'); return; }
+  if(!('IntersectionObserver' in window)){ seal.classList.add('stamped'); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ seal.classList.add('stamped'); io.disconnect(); }
+    });
+  }, {threshold:.4});
+  io.observe(seal);
+})();
+
+/* ===== Pulse Grid — CTA principal (circuito pulsante) ===== */
+(function(){
+  var ctas = document.querySelectorAll('.cta');
+  var wrap = null;
+  for(var i=0;i<ctas.length;i++){
+    if(ctas[i].querySelector('.cta-stats')){ wrap = ctas[i]; break; }
+  }
+  if(!wrap) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var canvas = document.createElement('canvas');
+  canvas.className = 'pulse-canvas';
+  var overlay = wrap.querySelector('.cta-overlay');
+  wrap.insertBefore(canvas, overlay);
+  var ctx = canvas.getContext('2d');
+  var dpr = Math.min(window.devicePixelRatio||1, 2);
+  var w=0,h=0,raf=0,running=false,t0=0;
+  var cell = 46, segs = [];
+  function build(){
+    segs = [];
+    var cols = Math.ceil(w/cell)+1, rows = Math.ceil(h/cell)+1;
+    for(var r=0;r<rows;r++){
+      for(var c=0;c<cols;c++){
+        if(Math.random()<0.22){
+          segs.push({
+            x: c*cell, y: r*cell,
+            horiz: Math.random()<0.5,
+            len: cell*(0.6+Math.random()*0.4),
+            delay: Math.random()*6,
+            dur: 2.4+Math.random()*2.6
+          });
+        }
+      }
+    }
+  }
+  function size(){
+    w = wrap.clientWidth; h = wrap.clientHeight;
+    canvas.width = Math.max(1,w*dpr); canvas.height = Math.max(1,h*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    build();
+  }
+  size();
+  window.addEventListener('resize', size);
+  function draw(now){
+    raf = requestAnimationFrame(draw);
+    var t = (now - t0)/1000;
+    ctx.clearRect(0,0,w,h);
+    ctx.strokeStyle = 'rgba(0,210,106,.12)'; ctx.lineWidth = 1;
+    for(var x=0;x<w;x+=cell){ ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,h); ctx.stroke(); }
+    for(var y=0;y<h;y+=cell){ ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke(); }
+    ctx.lineCap = 'round';
+    for(var i=0;i<segs.length;i++){
+      var s = segs[i];
+      var local = (t - s.delay) % s.dur;
+      if(local<0) continue;
+      var a = Math.sin((local/s.dur)*Math.PI);
+      if(a<=0) continue;
+      ctx.strokeStyle = 'rgba(0,210,106,'+(a*0.85).toFixed(3)+')';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(s.x, s.y);
+      if(s.horiz) ctx.lineTo(s.x+s.len, s.y); else ctx.lineTo(s.x, s.y+s.len);
+      ctx.stroke();
+    }
+  }
+  if(!('IntersectionObserver' in window)){ t0=performance.now(); raf = requestAnimationFrame(draw); }
+  else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting && !running){ running=true; t0=performance.now(); raf=requestAnimationFrame(draw); }
+        else if(!entry.isIntersecting && running){ running=false; cancelAnimationFrame(raf); }
+      });
+    }, {threshold:.05});
+    io.observe(wrap);
+  }
+})();
+</script>
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-label="Imagem ampliada"><button class="gallery-lightbox-close" type="button" aria-label="Fechar imagem">×</button><img alt=""><div class="gallery-lightbox-caption"></div></div>
+<script>
+(function(){
+  var box=document.getElementById('galleryLightbox');
+  if(!box)return;
+  var image=box.querySelector('img'), caption=box.querySelector('.gallery-lightbox-caption'), close=box.querySelector('.gallery-lightbox-close');
+  function hide(){box.classList.remove('is-open');box.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+  function show(img){image.src=img.currentSrc||img.src;image.alt=img.alt||'';caption.textContent=img.alt||'';box.classList.add('is-open');box.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+  window.openGalleryImage=show;
+  function galleryImageFrom(target){
+    var node=target;
+    while(node && node!==document){
+      if(node.tagName==='IMG' && node.closest && node.closest('.gal-grid')) return node;
+      node=node.parentNode;
+    }
+    return null;
+  }
+  document.addEventListener('click',function(e){var img=galleryImageFrom(e.target);if(img){e.preventDefault();e.stopPropagation();show(img);}});
+  close.addEventListener('click',hide);
+  box.addEventListener('click',function(e){if(e.target===box)hide();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&box.classList.contains('is-open'))hide();});
 })();
 </script>
 </body>
